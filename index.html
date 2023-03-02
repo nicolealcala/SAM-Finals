@@ -11,12 +11,10 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- Styles -->
     <style>
-      @import url("https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap");
-      @import url("https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=Heebo:wght@300;400;500;600&family=Poppins:wght@400;500;600;700&display=swap");
 
       /* Local */
       html,
@@ -24,15 +22,22 @@
         display: block;
         overflow-x: hidden;
       }
+
+      * {
+        font-family: "Heebo", sans-serif;
+        font-size: 18px;
+        font-weight: 400;
+      }
       .mainContainer {
         width: 100vw;
       }
       section {
-        width: 100%;
         height: 1080px;
       }
+
+      /* SECTIONS */
       #home {
-        background-image: url("assets/bg/home.png");
+        background-image: url("https://github.com/nicolealcala/SAM-Finals/blob/main/assets/bg/home.png?raw=true");
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
@@ -40,7 +45,15 @@
       #about {
         background-color: #f5f5f5;
       }
-
+      #resume {
+        background-color: #7d75ab;
+      }
+      #softSkills {
+        background-image: url("assets/bg/softSkill.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+      }
       .content {
         height: 70%;
       }
@@ -66,24 +79,59 @@
       }
 
       /* TEXTS */
-      #title {
+      #title,
+      .dates {
         margin: auto;
         font-family: "Golos Text", sans-serif;
         color: white;
         font-size: 60px;
       }
       .subTitle {
-        font-size: 30px;
+        font-size: 40px;
         font-weight: 600;
       }
-      #aboutTxt {
+      .miniTitle {
+        font-family: "Golos Text", sans-serif;
+        color: white;
+        font-size: 17px;
+        font-weight: 600;
+      }
+      .darkTxt {
+        color: #604e6f;
+      }
+      #aboutTxt,
+      #resumeTxt,
+      #techSkillsTxt,
+      #softSkillsTxt {
+        margin-top: 30px;
+        margin-bottom: 30px;
         color: #7d75ab;
+      }
+      #resumeTxt {
+        color: #ffc5b4;
+      }
+      #techSkillsTxt, #toolsTxt {
+        color: #466595;
+      }
+      .lightTxt,
+      #softSkillsTxt {
+        color: white;
+      }
+      .dates {
+        width: 300px;
+        background-color: #ffc5b4;
+        font-size: 18px;
+        font-weight: 600;
+        color: #6e78a9;
+      }
+      .skilltxtContainer {
+        width: 100%;
       }
 
       /* LINES */
       .line {
         width: 5px;
-        height: 70px;
+        height: 50px;
         left: 50%;
         position: relative;
       }
@@ -96,14 +144,35 @@
         width: 20px;
         border-radius: 50%;
       }
-      #aboutLine {
+      #aboutLineTop {
         background-color: #f197a3;
+      }
+      #aboutLineTop:before {
+        background-color: #f197a3;
+      }
+      #resumeLineTop {
+        background-color: #f5f5f5;
+      }
+      #resumeLineTop:before {
+        background-color: #f5f5f5;
+      }
+      #techLineTop {
+        background-color: #7d75ab;
+      }
+      #techLineTop:before {
+        background-color: #7d75ab;
       }
 
-      #aboutLine:before {
-        background-color: #f197a3;
-      }
+      /* Images */
     </style>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/circle-progress@1.2.2/circle-progress.min.css"
+      integrity="sha384-eCvS05WAM+8/Ky3qgnCEbHYcwv6TpwT6TgU6TmnUahMwH6Djb0ePNsOWs0+W2xhG"
+      crossorigin="anonymous"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-circle-progress/1.2.2/circle-progress.min.js"></script>
   </head>
   <body>
     <div class="mainContainer">
@@ -127,15 +196,18 @@
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                   <li class="nav-item">
-                    <a class="nav-link active px-3" aria-current="page" href="#"
+                    <a
+                      class="nav-link active px-3"
+                      aria-current="page"
+                      href="#home"
                       >Home</a
                     >
                   </li>
                   <li class="nav-item px-3">
-                    <a class="nav-link" href="#">About</a>
+                    <a class="nav-link" href="#about">About</a>
                   </li>
                   <li class="nav-item px-3">
-                    <a class="nav-link" href="#">Resume</a>
+                    <a class="nav-link" href="#resume">Resume</a>
                   </li>
                   <li class="nav-item px-3">
                     <a class="nav-link" href="#">Portfolio</a>
@@ -165,16 +237,358 @@
       </section>
       <!-- About Start -->
       <section id="about">
-        <div class="line" id="aboutLine"></div>
-        <div class="col-12 mx-0 my-5 text-center subTitle" id="aboutTxt">
-          ABOUT ME
-        </div>
-
-        <div class="row mx-0 my-5">
-          <div class="col-12 col-md-6">
+        <div class="line" id="aboutLineTop"></div>
+        <div class="container">
+          <div class="col-12 mx-0 text-center subTitle" id="aboutTxt">
+            ABOUT ME
           </div>
+          <div class="row mx-0 mb-2" style="margin-top: 100px">
+            <div
+              class="col-12 col-md-5 d-flex align-items-center justify-content-center"
+            >
+              <img class="img-fluid" src="assets/dp.png" alt="" />
+            </div>
+            <div class="col-12 col-md-7 ps-4 d-flex align-items-center">
+              <div class="txtContainer">
+                <p class="darkTxt">
+                  Hello! I am <b style="color: #ef7583">Nicole Alcala</b> - an
+                  aspiring Web Developer based in Laguna. I am currently taking
+                  my bachelor's degree in Information Technology at Polytechnic
+                  University of the Philippines - Sto. Tomas Branch. With great
+                  passion for learning, I am a consistent President’s Lister
+                  from 2019 to present. I enjoy programming, designing, and
+                  database management.
+                </p>
+                <p class="darkTxt">
+                  I have only ever worked on small projects that were solely for
+                  academic purposes. I am comfortable working with HTML, CSS,
+                  JavaScript, and Bootstrap. Currently, I serve as the Web
+                  Development Lead in our Capstone Project. We are developing a
+                  QR Code Supported Web-based Information System for one of the
+                  barangays in Calamba City, Laguna.
+                </p>
+                <p class="darkTxt">
+                  I am an enthusiastic, active team player and leader. I have
+                  the ability to perform well both independently and in a
+                  collaborative setting. I am committed to learning and
+                  developing remarkable web applications that provide a great
+                  user experience.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="row mx-0">
+            <div class="col-12 col-md-5"></div>
+            <div class="col-12 col-md-7 ps-4">
+              <button
+                class="btn rounded-pill"
+                style="background-color: #ef7583; color: #f5f5f5"
+              >
+                Download CV
+              </button>
+            </div>
+          </div>
+          <!-- Container End -->
         </div>
         <!-- About End -->
+      </section>
+
+      <!-- Resume Start -->
+      <section id="resume">
+        <div class="line" id="resumeLineTop"></div>
+        <div class="container">
+          <div class="col-12 mx-0 text-center subTitle" id="resumeTxt">
+            RESUME
+          </div>
+          <div class="row mx-0 mb-2">
+            <div class="col-12 text-center subTitle" style="font-size: 25px">
+              NICOLE ALCALA
+            </div>
+            <div class="col-12 text-center mt-3">
+              <p class="lightTxt" style="font-weight: 300">
+                Highly motivated and detail-oriented BSIT student with a good
+                foundation in full stack web development and UI/UX designing.
+                Consistently achieving academic success while demonstrating a
+                keen ability to work independently and collaboratively with
+                others. Experienced in developing prototype systems, designing
+                interfaces, building databases, and creating websites. Ready to
+                contribute my knowledge and skills to a dynamic organization.
+              </p>
+            </div>
+          </div>
+          <!-- Educational BG -->
+          <div class="row mx-0 mt-2 mb-2 gy-4">
+            <div class="col-12 text-center subTitle" style="font-size: 25px">
+              EDUCATIONAL BACKGROUND
+            </div>
+            <div
+              class="col-12 col-md-5 d-flex justify-content-end align-items-center"
+            >
+              <div
+                class="rounded-pill dates d-flex align-items-center justify-content-center py-2"
+              >
+                JUNE 2019 - PRESENT
+              </div>
+            </div>
+
+            <div class="col-2 d-flex align-items-center justify-content-center">
+              <img src="assets/icon-educ.png" alt="" />
+            </div>
+
+            <div
+              class="col-12 col-md-5 d-flex justify-content-start align-items-center"
+            >
+              <div class="txtContainer d-flex flex-column">
+                <span class="miniTitle"
+                  >BACHELOR OF SCIENCE IN INFORMATION TECHNOLOGY</span
+                >
+                <span style="color: #f0f0f0"
+                  >Polytechnic University of the Philippine - Sto. Tomas</span
+                >
+                <span style="color: #f0f0f0">Sto. Tomas City, Batangas</span>
+              </div>
+            </div>
+
+            <div
+              class="col-12 col-md-5 d-flex justify-content-end align-items-center"
+            >
+              <div class="txtContainer d-flex flex-column text-end">
+                <span class="miniTitle"
+                  >SCIENCE, TECHNOLOGY, ENGINEERING AND MATHEMATICS</span
+                >
+                <span style="color: #f0f0f0">St. John Colleges</span>
+                <span style="color: #f0f0f0">Calamba City, Laguna</span>
+              </div>
+            </div>
+            <div class="col-2 d-flex align-items-center justify-content-center">
+              <img src="assets/icon-educ.png" alt="" />
+            </div>
+            <div
+              class="col-12 col-md-5 d-flex justify-content-start align-items-center"
+            >
+              <div
+                class="rounded-pill dates d-flex align-items-center justify-content-center py-2"
+              >
+                JUNE 2017 - MARCH 2019
+              </div>
+            </div>
+          </div>
+          <!-- Awards -->
+          <div class="row mx-0 mt-4 mb-2 gy-4">
+            <div class="col-12 text-center subTitle" style="font-size: 25px">
+              AWARDS AND RECOGNITIONS
+            </div>
+            <div
+              class="col-12 col-md-5 d-flex justify-content-end align-items-center"
+            >
+              <div
+                class="rounded-pill dates d-flex align-items-center justify-content-center py-2"
+              >
+                2019 - 2022
+              </div>
+            </div>
+
+            <div class="col-2 d-flex align-items-center justify-content-center">
+              <img src="assets/icon-awards.png" alt="" />
+            </div>
+
+            <div
+              class="col-12 col-md-5 d-flex justify-content-start align-items-center"
+            >
+              <div class="txtContainer d-flex flex-column">
+                <span class="miniTitle">PRESIDENTS'S LISTER, 6 semesters</span>
+                <span style="color: #f0f0f0"
+                  >Polytechnic University of the Philippine - Sto. Tomas</span
+                >
+                <span style="color: #f0f0f0">Sto. Tomas City, Batangas</span>
+              </div>
+            </div>
+
+            <div
+              class="col-12 col-md-5 d-flex justify-content-end align-items-center"
+            >
+              <div class="txtContainer d-flex flex-column text-end">
+                <span class="miniTitle"
+                  >BACHELOR OF SCIENCE IN INFORMATION TECHNOLOGY</span
+                >
+                <span style="color: #f0f0f0"
+                  >Polytechnic University of the Philippine - Sto. Tomas</span
+                >
+                <span style="color: #f0f0f0">Sto. Tomas City, Batangas</span>
+              </div>
+            </div>
+            <div class="col-2 d-flex align-items-center justify-content-center">
+              <img src="assets/icon-awards.png" alt="" />
+            </div>
+            <div
+              class="col-12 col-md-5 d-flex justify-content-start align-items-center"
+            >
+              <div
+                class="rounded-pill dates d-flex align-items-center justify-content-center py-2"
+              >
+                JUNE 2017 - MARCH 2019
+              </div>
+            </div>
+          </div>
+          <!-- Container End -->
+        </div>
+        <!-- Resume End -->
+      </section>
+
+      <!-- Tech Skills Start -->
+      <section id="skills">
+        <div class="line" id="techLineTop"></div>
+        <div class="col-12 mx-0 text-center subTitle" id="techSkillsTxt">
+          TECHNICAL SKILLS
+        </div>
+
+        <div class="row mx-0">
+          <div class="col-12 col-sm-6 col-md-4">
+            <div id="html5"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Soft Skills Start -->
+      <section id="softSkills">
+        <div class="line" id="resumeLineTop"></div>
+        <div class="container">
+          <div class="col-12 mx-0 text-center subTitle" id="softSkillsTxt">
+            SOFT SKILLS
+          </div>
+          <!-- Communication -->
+          <div class="row mx-0 gy-5">
+            <div class="col-12 col-sm-6 col-md-4">
+              <div class="softSkill d-flex justify-content-center">
+                <div class="imgContainer me-3">
+                  <img class="img-fluid" src="assets/icon-comm.png" alt="" />
+                </div>
+                <div class="skilltxtContainer d-flex flex-column">
+                  <span class="miniTitle">COMMUNICATION SKILLS</span>
+                  <span class="lightTxt" style="font-weight: 300"
+                    >Convey information effectively and efficiently to
+                    others.</span
+                  >
+                </div>
+              </div>
+            </div>
+            <!-- Leadership -->
+            <div class="col-12 col-sm-6 col-md-4">
+              <div class="softSkill d-flex justify-content-center">
+                <div class="imgContainer me-3">
+                  <img
+                    class="img-fluid"
+                    src="assets/icon-lead.png"
+                    width="70px"
+                    height="70px"
+                    alt=""
+                  />
+                </div>
+                <div class="skilltxtContainer d-flex flex-column">
+                  <span class="miniTitle">LEADERSHIP SKILLS</span>
+                  <span class="lightTxt" style="font-weight: 300"
+                    >Effectively influence, motivate, and guide others toward
+                    achieving specific goals.</span
+                  >
+                </div>
+              </div>
+            </div>
+            <!-- Teamwork -->
+            <div class="col-12 col-sm-6 col-md-4">
+              <div class="softSkill d-flex justify-content-center">
+                <div class="imgContainer me-3">
+                  <img
+                    class="img-fluid"
+                    src="assets/icon-team.png"
+                    width="70px"
+                    height="70px"
+                    alt=""
+                  />
+                </div>
+                <div class="skilltxtContainer d-flex flex-column">
+                  <span class="miniTitle">TEAMWORK & COLLABORATION</span>
+                  <span class="lightTxt" style="font-weight: 300"
+                    >Able to work in a team environment effectively toward a
+                    common goal or objective.</span
+                  >
+                </div>
+              </div>
+            </div>
+            <!-- Creativity -->
+            <div class="col-12 col-sm-6 col-md-4">
+              <div class="softSkill d-flex justify-content-center">
+                <div class="imgContainer me-3">
+                  <img
+                    class="img-fluid"
+                    src="assets/icon-create.png"
+                    width="70px"
+                    height="70px"
+                    alt=""
+                  />
+                </div>
+                <div class="skilltxtContainer d-flex flex-column">
+                  <span class="miniTitle">CREATIVITY</span>
+                  <span class="lightTxt" style="font-weight: 300"
+                    >Create innovative and visually-appealing websites.</span
+                  >
+                </div>
+              </div>
+            </div>
+            <!-- Trainable -->
+            <div class="col-12 col-sm-6 col-md-4">
+              <div class="softSkill d-flex justify-content-center">
+                <div class="imgContainer me-3">
+                  <img
+                    class="img-fluid"
+                    src="assets/icon-train.png"
+                    width="70px"
+                    height="70px"
+                    alt=""
+                  />
+                </div>
+                <div class="skilltxtContainer d-flex flex-column">
+                  <span class="miniTitle">TRAINABLE</span>
+                  <span class="lightTxt" style="font-weight: 300"
+                    >Able and willing to learn new skills and adapt to new
+                    situations.</span
+                  >
+                </div>
+              </div>
+            </div>
+            <!-- Problem-Solving -->
+            <div class="col-12 col-sm-6 col-md-4">
+              <div class="softSkill d-flex justify-content-center">
+                <div class="imgContainer me-3">
+                  <img
+                    class="img-fluid"
+                    src="assets/icon-problem.png"
+                    width="70px"
+                    height="70px"
+                    alt=""
+                  />
+                </div>
+                <div class="skilltxtContainer d-flex flex-column">
+                  <span class="miniTitle">PROBLEM-SOLVING SKILLS</span>
+                  <span class="lightTxt" style="font-weight: 300"
+                    >Identify, analyze, and solve problems in a systematic and
+                    effective manner.</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- TOOLS -->
+          <div class="col-12 mx-0 text-center subTitle" id="toolsTxt">
+            TOOLS
+          </div>
+
+          <div class="col-12 mx-0">
+            <div class="tool d-flex flex-column">
+              <img src="asste" alt="">
+            </div>
+          </div>
+        </div>
       </section>
       <!-- Main Container End -->
     </div>
