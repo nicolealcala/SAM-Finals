@@ -343,6 +343,34 @@
           box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
         }
       }
+
+      /* Cards */
+      .flip-container {
+        perspective: 1000px;
+      }
+      .flipper {
+        transition: 0.6s;
+        transform-style: preserve-3d;
+        position: relative;
+      }
+      .front,
+      .back {
+        width: 325px;
+        height: 450px;
+        backface-visibility: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+      .front {
+        z-index: 2;
+      }
+      .back {
+        transform: rotateY(180deg);
+      }
+      .flip-container:hover .flipper {
+        transform: rotateY(180deg);
+      }
     </style>
 
     <link
@@ -887,7 +915,10 @@
               <div class="flip-container">
                 <div class="flipper">
                   <div class="front">
-                    <img src="" alt="">
+                    <img
+                      src="https://github.com/nicolealcala/SAM-Finals/blob/main/assets/front-kkis.png?raw=true"
+                      alt=""
+                    />
                   </div>
                   <div class="back">
                     <!-- Back content goes here -->
