@@ -32,8 +32,12 @@
       .mainContainer {
         width: 100vw;
       }
+      .container {
+        z-index: 10;
+      }
       section {
         height: 1080px;
+        position: relative;
       }
 
       /* SECTIONS */
@@ -55,6 +59,14 @@
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
+      }
+      #kkis {
+        background-image: url("https://scontent.fmnl13-1.fna.fbcdn.net/v/t39.30808-6/300660227_479724910857260_7448893174820554069_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=0debeb&_nc_eui2=AeEMs6rS5K09cCQXDEfSK4Q-3e4lGyn3asLd7iUbKfdqwqmqtmmQ31FAcYe3jk1m3AMOTB5yDV71fpsAnXJFj0cW&_nc_ohc=P9cR26Nd-mUAX-Vm5YO&_nc_zt=23&_nc_ht=scontent.fmnl13-1.fna&oh=00_AfAeHkKU37YWh887xD9ppHkisTYHuWUA2c-U4vjukyd-5A&oe=6407C5D2");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        filter: grayscale(100%);
+        opacity: 0.05;
       }
       .content {
         height: 70%;
@@ -140,6 +152,7 @@
         height: 50px;
         left: 50%;
         position: relative;
+        z-index: 10;
       }
       .line::before {
         content: "";
@@ -173,6 +186,11 @@
       .logo {
         width: 100px;
         height: 100px;
+        margin-bottom: 20px;
+      }
+      .project {
+        height: 50px;
+        width: auto;
       }
     </style>
 
@@ -618,7 +636,7 @@
               <div
                 class="col-12 col-sm-6 col-md-2 mx-0 d-flex flex-column justify-content-center align-items-center"
               >
-                <div class="logo">
+                <div class="logo d-flex justify-content-center align-items-center">
                   <img
                     class="img-fluid"
                     src="https://github.com/nicolealcala/SAM-Finals/blob/main/assets/logo-figma.png?raw=true"
@@ -631,7 +649,7 @@
               <div
                 class="col-12 col-sm-6 col-md-2 mx-0 d-flex flex-column justify-content-center align-items-center"
               >
-                <div class="logo">
+                <div class="logo d-flex justify-content-center align-items-center">
                   <img
                     class="img-fluid"
                     src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/PhpMyAdmin_logo.svg/1200px-PhpMyAdmin_logo.svg.png"
@@ -644,7 +662,7 @@
               <div
                 class="col-12 col-sm-6 col-md-2 mx-0 d-flex flex-column justify-content-center align-items-center"
               >
-                <div class="logo">
+                <div class="logo d-flex justify-content-center align-items-center">
                   <img
                     class="img-fluid"
                     src="https://github.com/nicolealcala/SAM-Finals/blob/main/assets/logo-github.png?raw=true"
@@ -657,7 +675,7 @@
               <div
                 class="col-12 col-sm-6 col-md-2 mx-0 d-flex flex-column justify-content-center align-items-center"
               >
-                <div class="logo">
+                <div class="logo d-flex justify-content-center align-items-center">
                   <img
                     class="img-fluid"
                     src="https://github.com/nicolealcala/SAM-Finals/blob/main/assets/logo-xd.png?raw=true"
@@ -670,7 +688,7 @@
               <div
                 class="col-12 col-sm-6 col-md-2 mx-0 d-flex flex-column justify-content-center align-items-center"
               >
-                <div class="logo">
+                <div class="logo d-flex justify-content-center align-items-center">
                   <img
                     class="img-fluid"
                     src="https://github.com/nicolealcala/SAM-Finals/blob/main/assets/logo-dev.png?raw=true"
@@ -685,26 +703,63 @@
       </section>
 
       <!-- Projects -->
-      <section id="projects">
-        <!-- <div class="line" id="aboutLineTop"></div> -->
-        <div style="background-color: #466595; height: 190px">
-          <div class="row mx-0">
-            <div class="col-4">
-              <img src="" alt="">
+      <section id="projects" style="height: auto">
+        <div class="line" id="aboutLineTop"></div>
+        <div
+          class="d-flex justify-content-center align-items-center"
+          style="
+            background-color: #3C5E94;
+            height: 190px;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            z-index: 1;
+          "
+        >
+          <div class="container mt-3 pt-2">
+            <div class="row mx-0">
+              <div class="col-12 col-sm-6 col-md-3 d-flex justify-content-center align-items-center">
+                <a href="">
+                  <img
+                    class="project"
+                    src="https://github.com/nicolealcala/SAM-Finals/blob/main/assets/logo-kkis.png?raw=true"
+                    alt=""
+                  />
+                </a>
+              </div>
+              <div class="col-12 col-sm-6 col-md-3 d-flex justify-content-center align-items-center">
+                <a href="">
+                  <img
+                    class="project"
+                    src="https://github.com/nicolealcala/SAM-Finals/blob/main/assets/logo-loungescape.png?raw=true"
+                    alt=""
+                  />
+                </a>
+              </div>
+              <div class="col-12 col-sm-6 col-md-3 d-flex justify-content-center align-items-center">
+                <a href="">
+                  <img
+                    class="project"
+                    src="https://github.com/nicolealcala/SAM-Finals/blob/main/assets/logo-ontrack.png?raw=true"
+                    alt=""
+                  />
+                </a>
+              </div>
+              <div class="col-12 col-sm-6 col-md-3 d-flex justify-content-center align-items-center">
+                <a href="">
+                  <img
+                    class="project"
+                    src="https://github.com/nicolealcala/SAM-Finals/blob/main/assets/logo-adtukat.png?raw=true"
+                    alt=""
+                  />
+                </a>
+              </div>
             </div>
           </div>
         </div>
-        <div class="container">
-          <div class="col-12 mx-0 text-center subTitle" id="aboutTxt">
-            PROJECTS
-          </div>
+      </section>
+      <section id="kkis">
 
-          <div class="row mx-0">
-            <div class="col-12 col-sm-6 col-md-4">
-              <div id="html5"></div>
-            </div>
-          </div>
-        </div>
       </section>
       <!-- Main Container End -->
     </div>
