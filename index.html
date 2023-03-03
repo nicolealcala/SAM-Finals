@@ -60,14 +60,6 @@
         background-position: center;
         background-size: cover;
       }
-      #kkis {
-        background-image: url("https://scontent.fmnl13-1.fna.fbcdn.net/v/t39.30808-6/300660227_479724910857260_7448893174820554069_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=0debeb&_nc_eui2=AeEMs6rS5K09cCQXDEfSK4Q-3e4lGyn3asLd7iUbKfdqwqmqtmmQ31FAcYe3jk1m3AMOTB5yDV71fpsAnXJFj0cW&_nc_ohc=P9cR26Nd-mUAX-Vm5YO&_nc_zt=23&_nc_ht=scontent.fmnl13-1.fna&oh=00_AfAeHkKU37YWh887xD9ppHkisTYHuWUA2c-U4vjukyd-5A&oe=6407C5D2");
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
-        filter: grayscale(100%);
-        opacity: 0.05;
-      }
       .content {
         height: 70%;
       }
@@ -81,15 +73,6 @@
         font-weight: 600;
         color: #f7d9d0;
         border-bottom: 3px solid #f7d9d0;
-      }
-      #connectBtn {
-        color: white;
-        border: 2px solid white;
-      }
-      #connectBtn:hover {
-        color: #6e78a9;
-        background-color: white;
-        border-color: white;
       }
       .toolsDiv {
         margin-top: 260px;
@@ -192,6 +175,174 @@
         height: 50px;
         width: auto;
       }
+
+      /* Buttons */
+      .btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 150px;
+        height: 3rem;
+        background-size: 300% 300%;
+        backdrop-filter: blur(1rem);
+        border-radius: 5rem;
+        transition: 0.5s;
+        animation: gradient_301 5s ease infinite;
+        border: double 4px transparent;
+        background-image: linear-gradient(#212121, #212121),
+          linear-gradient(
+            137.48deg,
+            #ffc5b4 10%,
+            #f197a3 45%,
+            #8f51ea 67%,
+            #466595 87%
+          );
+        background-origin: border-box;
+        background-clip: content-box, border-box;
+      }
+      #container-stars {
+        position: fixed;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        transition: 0.5s;
+        backdrop-filter: blur(1rem);
+        border-radius: 5rem;
+      }
+      strong {
+        z-index: 2;
+        font-family: "Poppins", sans-serif;
+        font-size: 14px;
+        letter-spacing: 5px;
+        color: #ffffff;
+        text-shadow: 0 0 4px white;
+      }
+      #glow {
+        position: absolute;
+        display: flex;
+        width: 12rem;
+      }
+      .circle {
+        width: 100%;
+        height: 30px;
+        filter: blur(2rem);
+        animation: pulse_3011 4s infinite;
+        z-index: -1;
+      }
+      .circle:nth-of-type(1) {
+        background: rgba(254, 83, 186, 0.636);
+      }
+      .circle:nth-of-type(2) {
+        background: rgba(142, 81, 234, 0.704);
+      }
+      .btn:hover #container-stars {
+        z-index: 1;
+        background-color: #212121;
+      }
+      .btn:hover {
+        transform: scale(1.05);
+      }
+
+      .btn:active {
+        border: double 4px #fe53bb;
+        background-origin: border-box;
+        background-clip: content-box, border-box;
+        animation: none;
+      }
+
+      .btn:active .circle {
+        background: #fe53bb;
+      }
+
+      #stars {
+        position: relative;
+        background: transparent;
+        width: 200rem;
+        height: 200rem;
+      }
+
+      #stars::after {
+        content: "";
+        position: absolute;
+        top: -10rem;
+        left: -100rem;
+        width: 100%;
+        height: 100%;
+        animation: animStarRotate 90s linear infinite;
+      }
+
+      #stars::after {
+        background-image: radial-gradient(#ffffff 1px, transparent 1%);
+        background-size: 50px 50px;
+      }
+
+      #stars::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -50%;
+        width: 170%;
+        height: 500%;
+        animation: animStar 60s linear infinite;
+      }
+
+      #stars::before {
+        background-image: radial-gradient(#ffffff 1px, transparent 1%);
+        background-size: 50px 50px;
+        opacity: 0.5;
+      }
+
+      @keyframes animStar {
+        from {
+          transform: translateY(0);
+        }
+
+        to {
+          transform: translateY(-135rem);
+        }
+      }
+
+      @keyframes animStarRotate {
+        from {
+          transform: rotate(360deg);
+        }
+
+        to {
+          transform: rotate(0);
+        }
+      }
+
+      @keyframes gradient_301 {
+        0% {
+          background-position: 0% 50%;
+        }
+
+        50% {
+          background-position: 100% 50%;
+        }
+
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      @keyframes pulse_3011 {
+        0% {
+          transform: scale(0.75);
+          box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+        }
+
+        70% {
+          transform: scale(1);
+          box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+        }
+
+        100% {
+          transform: scale(0.75);
+          box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+        }
+      }
     </style>
 
     <link
@@ -241,12 +392,17 @@
                     <a class="nav-link" href="#">Portfolio</a>
                   </li>
                   <li class="nav-item px-3">
-                    <a
-                      class="nav-link btn rounded-pill px-3 py-1"
-                      href="#"
-                      id="connectBtn"
-                      >Connect</a
-                    >
+                    <button type="button" class="btn">
+                      <strong>CONNECT</strong>
+                      <div id="container-stars">
+                        <div id="stars"></div>
+                      </div>
+
+                      <div id="glow">
+                        <div class="circle"></div>
+                        <div class="circle"></div>
+                      </div>
+                    </button>
                   </li>
                 </ul>
               </div>
@@ -305,14 +461,25 @@
               </div>
             </div>
           </div>
-          <div class="row mx-0">
+          <div class="row mx-0 mt-3">
             <div class="col-12 col-md-5"></div>
             <div class="col-12 col-md-7 ps-4">
-              <button
+              <!-- <button
                 class="btn rounded-pill"
                 style="background-color: #ef7583; color: #f5f5f5"
               >
                 Download CV
+              </button> -->
+              <button type="button" class="btn" style="width: 200px">
+                <strong>Download CV</strong>
+                <div id="container-stars">
+                  <div id="stars"></div>
+                </div>
+
+                <div id="glow">
+                  <div class="circle"></div>
+                  <div class="circle"></div>
+                </div>
               </button>
             </div>
           </div>
@@ -636,7 +803,9 @@
               <div
                 class="col-12 col-sm-6 col-md-2 mx-0 d-flex flex-column justify-content-center align-items-center"
               >
-                <div class="logo d-flex justify-content-center align-items-center">
+                <div
+                  class="logo d-flex justify-content-center align-items-center"
+                >
                   <img
                     class="img-fluid"
                     src="https://github.com/nicolealcala/SAM-Finals/blob/main/assets/logo-figma.png?raw=true"
@@ -649,7 +818,9 @@
               <div
                 class="col-12 col-sm-6 col-md-2 mx-0 d-flex flex-column justify-content-center align-items-center"
               >
-                <div class="logo d-flex justify-content-center align-items-center">
+                <div
+                  class="logo d-flex justify-content-center align-items-center"
+                >
                   <img
                     class="img-fluid"
                     src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/PhpMyAdmin_logo.svg/1200px-PhpMyAdmin_logo.svg.png"
@@ -662,7 +833,9 @@
               <div
                 class="col-12 col-sm-6 col-md-2 mx-0 d-flex flex-column justify-content-center align-items-center"
               >
-                <div class="logo d-flex justify-content-center align-items-center">
+                <div
+                  class="logo d-flex justify-content-center align-items-center"
+                >
                   <img
                     class="img-fluid"
                     src="https://github.com/nicolealcala/SAM-Finals/blob/main/assets/logo-github.png?raw=true"
@@ -675,7 +848,9 @@
               <div
                 class="col-12 col-sm-6 col-md-2 mx-0 d-flex flex-column justify-content-center align-items-center"
               >
-                <div class="logo d-flex justify-content-center align-items-center">
+                <div
+                  class="logo d-flex justify-content-center align-items-center"
+                >
                   <img
                     class="img-fluid"
                     src="https://github.com/nicolealcala/SAM-Finals/blob/main/assets/logo-xd.png?raw=true"
@@ -688,7 +863,9 @@
               <div
                 class="col-12 col-sm-6 col-md-2 mx-0 d-flex flex-column justify-content-center align-items-center"
               >
-                <div class="logo d-flex justify-content-center align-items-center">
+                <div
+                  class="logo d-flex justify-content-center align-items-center"
+                >
                   <img
                     class="img-fluid"
                     src="https://github.com/nicolealcala/SAM-Finals/blob/main/assets/logo-dev.png?raw=true"
@@ -703,64 +880,25 @@
       </section>
 
       <!-- Projects -->
-      <section id="projects" style="height: auto">
-        <div class="line" id="aboutLineTop"></div>
-        <div
-          class="d-flex justify-content-center align-items-center"
-          style="
-            background-color: #3C5E94;
-            height: 190px;
-            width: 100%;
-            position: absolute;
-            top: 0;
-            z-index: 1;
-          "
-        >
-          <div class="container mt-3 pt-2">
-            <div class="row mx-0">
-              <div class="col-12 col-sm-6 col-md-3 d-flex justify-content-center align-items-center">
-                <a href="">
-                  <img
-                    class="project"
-                    src="https://github.com/nicolealcala/SAM-Finals/blob/main/assets/logo-kkis.png?raw=true"
-                    alt=""
-                  />
-                </a>
-              </div>
-              <div class="col-12 col-sm-6 col-md-3 d-flex justify-content-center align-items-center">
-                <a href="">
-                  <img
-                    class="project"
-                    src="https://github.com/nicolealcala/SAM-Finals/blob/main/assets/logo-loungescape.png?raw=true"
-                    alt=""
-                  />
-                </a>
-              </div>
-              <div class="col-12 col-sm-6 col-md-3 d-flex justify-content-center align-items-center">
-                <a href="">
-                  <img
-                    class="project"
-                    src="https://github.com/nicolealcala/SAM-Finals/blob/main/assets/logo-ontrack.png?raw=true"
-                    alt=""
-                  />
-                </a>
-              </div>
-              <div class="col-12 col-sm-6 col-md-3 d-flex justify-content-center align-items-center">
-                <a href="">
-                  <img
-                    class="project"
-                    src="https://github.com/nicolealcala/SAM-Finals/blob/main/assets/logo-adtukat.png?raw=true"
-                    alt=""
-                  />
-                </a>
+      <section id="projects">
+        <div class="container">
+          <div class="row mx-0">
+            <div class="col-12 col-sm-6 col-md-3">
+              <div class="flip-container">
+                <div class="flipper">
+                  <div class="front">
+                    <img src="" alt="">
+                  </div>
+                  <div class="back">
+                    <!-- Back content goes here -->
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
-      <section id="kkis">
 
-      </section>
       <!-- Main Container End -->
     </div>
   </body>
