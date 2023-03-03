@@ -27,6 +27,7 @@
         font-family: "Heebo", sans-serif;
         font-size: 18px;
         font-weight: 400;
+        color: #604e6f;
       }
       .mainContainer {
         width: 100vw;
@@ -42,14 +43,15 @@
         background-position: center;
         background-size: cover;
       }
-      #about {
+      #about,
+      #projects {
         background-color: #f5f5f5;
       }
       #resume {
         background-color: #7d75ab;
       }
       #softSkills {
-        background-image: url("assets/bg/softSkill.png");
+        background-image: url("https://github.com/nicolealcala/SAM-Finals/blob/main/assets/bg/softSkill.png?raw=true");
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
@@ -76,6 +78,9 @@
         color: #6e78a9;
         background-color: white;
         border-color: white;
+      }
+      .toolsDiv {
+        margin-top: 260px;
       }
 
       /* TEXTS */
@@ -110,7 +115,8 @@
       #resumeTxt {
         color: #ffc5b4;
       }
-      #techSkillsTxt, #toolsTxt {
+      #techSkillsTxt,
+      #toolsTxt {
         color: #466595;
       }
       .lightTxt,
@@ -164,6 +170,10 @@
       }
 
       /* Images */
+      .logo {
+        width: 100px;
+        height: 100px;
+      }
     </style>
 
     <link
@@ -438,13 +448,15 @@
       <!-- Tech Skills Start -->
       <section id="skills">
         <div class="line" id="techLineTop"></div>
-        <div class="col-12 mx-0 text-center subTitle" id="techSkillsTxt">
-          TECHNICAL SKILLS
-        </div>
+        <div class="container">
+          <div class="col-12 mx-0 text-center subTitle" id="techSkillsTxt">
+            TECHNICAL SKILLS
+          </div>
 
-        <div class="row mx-0">
-          <div class="col-12 col-sm-6 col-md-4">
-            <div id="html5"></div>
+          <div class="row mx-0">
+            <div class="col-12 col-sm-6 col-md-4">
+              <div id="html5"></div>
+            </div>
           </div>
         </div>
       </section>
@@ -457,11 +469,15 @@
             SOFT SKILLS
           </div>
           <!-- Communication -->
-          <div class="row mx-0 gy-5">
+          <div class="row mx-0 mt-2 gy-4">
             <div class="col-12 col-sm-6 col-md-4">
               <div class="softSkill d-flex justify-content-center">
                 <div class="imgContainer me-3">
-                  <img class="img-fluid" src="assets/icon-comm.png" alt="" />
+                  <img
+                    class="img-fluid"
+                    src="https://github.com/nicolealcala/SAM-Finals/blob/main/assets/icon-comm.png?raw=true"
+                    alt=""
+                  />
                 </div>
                 <div class="skilltxtContainer d-flex flex-column">
                   <span class="miniTitle">COMMUNICATION SKILLS</span>
@@ -478,7 +494,7 @@
                 <div class="imgContainer me-3">
                   <img
                     class="img-fluid"
-                    src="assets/icon-lead.png"
+                    src="https://github.com/nicolealcala/SAM-Finals/blob/main/assets/icon-lead.png?raw=true"
                     width="70px"
                     height="70px"
                     alt=""
@@ -499,7 +515,7 @@
                 <div class="imgContainer me-3">
                   <img
                     class="img-fluid"
-                    src="assets/icon-team.png"
+                    src="https://github.com/nicolealcala/SAM-Finals/blob/main/assets/icon-team.png?raw=true"
                     width="70px"
                     height="70px"
                     alt=""
@@ -520,7 +536,7 @@
                 <div class="imgContainer me-3">
                   <img
                     class="img-fluid"
-                    src="assets/icon-create.png"
+                    src="https://github.com/nicolealcala/SAM-Finals/blob/main/assets/icon-create.png?raw=true"
                     width="70px"
                     height="70px"
                     alt=""
@@ -540,7 +556,7 @@
                 <div class="imgContainer me-3">
                   <img
                     class="img-fluid"
-                    src="assets/icon-train.png"
+                    src="https://github.com/nicolealcala/SAM-Finals/blob/main/assets/icon-train.png?raw=true"
                     width="70px"
                     height="70px"
                     alt=""
@@ -561,7 +577,7 @@
                 <div class="imgContainer me-3">
                   <img
                     class="img-fluid"
-                    src="assets/icon-problem.png"
+                    src="https://github.com/nicolealcala/SAM-Finals/blob/main/assets/icon-problem.png?raw=true"
                     width="70px"
                     height="70px"
                     alt=""
@@ -579,13 +595,113 @@
           </div>
 
           <!-- TOOLS -->
-          <div class="col-12 mx-0 text-center subTitle" id="toolsTxt">
-            TOOLS
+          <div class="toolsDiv">
+            <div class="col-12 mx-0 mb-4 text-center subTitle" id="toolsTxt">
+              TOOLS
+            </div>
+
+            <div class="row mx-0 mt-5">
+              <div
+                class="col-12 col-sm-6 col-md-2 mx-0 d-flex flex-column justify-content-center align-items-center"
+              >
+                <div class="logo">
+                  <img
+                    class="img-fluid"
+                    src="https://github.com/nicolealcala/SAM-Finals/blob/main/assets/logo-vs.png?raw=true"
+                    alt=""
+                  />
+                </div>
+
+                <span>Visual Studio Code</span>
+              </div>
+
+              <div
+                class="col-12 col-sm-6 col-md-2 mx-0 d-flex flex-column justify-content-center align-items-center"
+              >
+                <div class="logo">
+                  <img
+                    class="img-fluid"
+                    src="https://github.com/nicolealcala/SAM-Finals/blob/main/assets/logo-figma.png?raw=true"
+                    alt=""
+                  />
+                </div>
+                <span>Figma</span>
+              </div>
+
+              <div
+                class="col-12 col-sm-6 col-md-2 mx-0 d-flex flex-column justify-content-center align-items-center"
+              >
+                <div class="logo">
+                  <img
+                    class="img-fluid"
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/PhpMyAdmin_logo.svg/1200px-PhpMyAdmin_logo.svg.png"
+                    alt=""
+                  />
+                </div>
+                <span>phpMyAdmin</span>
+              </div>
+
+              <div
+                class="col-12 col-sm-6 col-md-2 mx-0 d-flex flex-column justify-content-center align-items-center"
+              >
+                <div class="logo">
+                  <img
+                    class="img-fluid"
+                    src="https://github.com/nicolealcala/SAM-Finals/blob/main/assets/logo-github.png?raw=true"
+                    alt=""
+                  />
+                </div>
+                <span>Github</span>
+              </div>
+
+              <div
+                class="col-12 col-sm-6 col-md-2 mx-0 d-flex flex-column justify-content-center align-items-center"
+              >
+                <div class="logo">
+                  <img
+                    class="img-fluid"
+                    src="https://github.com/nicolealcala/SAM-Finals/blob/main/assets/logo-xd.png?raw=true"
+                    alt=""
+                  />
+                </div>
+                <span>Adobe XD</span>
+              </div>
+
+              <div
+                class="col-12 col-sm-6 col-md-2 mx-0 d-flex flex-column justify-content-center align-items-center"
+              >
+                <div class="logo">
+                  <img
+                    class="img-fluid"
+                    src="https://github.com/nicolealcala/SAM-Finals/blob/main/assets/logo-dev.png?raw=true"
+                    alt=""
+                  />
+                </div>
+                <span>Chrome DevTools</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects -->
+      <section id="projects">
+        <!-- <div class="line" id="aboutLineTop"></div> -->
+        <div style="background-color: #466595; height: 190px">
+          <div class="row mx-0">
+            <div class="col-4">
+              <img src="" alt="">
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="col-12 mx-0 text-center subTitle" id="aboutTxt">
+            PROJECTS
           </div>
 
-          <div class="col-12 mx-0">
-            <div class="tool d-flex flex-column">
-              <img src="asste" alt="">
+          <div class="row mx-0">
+            <div class="col-12 col-sm-6 col-md-4">
+              <div id="html5"></div>
             </div>
           </div>
         </div>
