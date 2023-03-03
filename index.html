@@ -11,6 +11,7 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
+    <script src="	https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- Styles -->
     <style>
@@ -47,8 +48,7 @@
         background-position: center;
         background-size: cover;
       }
-      #about,
-      #projects {
+      #about {
         background-color: #f5f5f5;
       }
       #resume {
@@ -59,6 +59,9 @@
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
+      }
+      #projects {
+        background-color: #f0f0f0;
       }
       .content {
         height: 70%;
@@ -76,6 +79,9 @@
       }
       .toolsDiv {
         margin-top: 260px;
+      }
+      .rowContent {
+        margin-top: 100px;
       }
 
       /* TEXTS */
@@ -355,12 +361,15 @@
       }
       .front,
       .back {
-        width: 325px;
-        height: 450px;
+        width: 300px;
+        height: 400px;
         backface-visibility: hidden;
         position: absolute;
         top: 0;
         left: 0;
+        cursor: pointer;
+        box-shadow: 0 2px 10px #c0c0c0;
+        border-radius: 20px;
       }
       .front {
         z-index: 2;
@@ -413,8 +422,40 @@
                   <li class="nav-item px-3">
                     <a class="nav-link" href="#about">About</a>
                   </li>
-                  <li class="nav-item px-3">
-                    <a class="nav-link" href="#resume">Resume</a>
+                  <li class="nav-item dropdown">
+                    <a
+                      class="nav-link dropdown-toggle"
+                      href="#resume"
+                      id="navbarDropdownMenuLink"
+                      role="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      Resume
+                    </a>
+                    <ul
+                      class="dropdown-menu"
+                      aria-labelledby="navbarDropdownMenuLink"
+                    >
+                      <li>
+                        <a class="dropdown-item" href="#resume"
+                          >Personal Information</a
+                        >
+                      </li>
+                      <li>
+                        <a class="dropdown-item" href="#techSkills"
+                          >Technical Skills</a
+                        >
+                      </li>
+                      <li>
+                        <a class="dropdown-item" href="#softSkills"
+                          >Soft Skills</a
+                        >
+                      </li>
+                      <li>
+                        <a class="dropdown-item" href="#projects">Projects</a>
+                      </li>
+                    </ul>
                   </li>
                   <li class="nav-item px-3">
                     <a class="nav-link" href="#">Portfolio</a>
@@ -492,12 +533,6 @@
           <div class="row mx-0 mt-3">
             <div class="col-12 col-md-5"></div>
             <div class="col-12 col-md-7 ps-4">
-              <!-- <button
-                class="btn rounded-pill"
-                style="background-color: #ef7583; color: #f5f5f5"
-              >
-                Download CV
-              </button> -->
               <button type="button" class="btn" style="width: 200px">
                 <strong>Download CV</strong>
                 <div id="container-stars">
@@ -523,7 +558,7 @@
           <div class="col-12 mx-0 text-center subTitle" id="resumeTxt">
             RESUME
           </div>
-          <div class="row mx-0 mb-2">
+          <div class="row mx-0 mt-4">
             <div class="col-12 text-center subTitle" style="font-size: 25px">
               NICOLE ALCALA
             </div>
@@ -659,14 +694,14 @@
       </section>
 
       <!-- Tech Skills Start -->
-      <section id="skills">
+      <section id="techSkills">
         <div class="line" id="techLineTop"></div>
         <div class="container">
           <div class="col-12 mx-0 text-center subTitle" id="techSkillsTxt">
             TECHNICAL SKILLS
           </div>
 
-          <div class="row mx-0">
+          <div class="row mx-0 rowContent">
             <div class="col-12 col-sm-6 col-md-4">
               <div id="html5"></div>
             </div>
@@ -682,7 +717,7 @@
             SOFT SKILLS
           </div>
           <!-- Communication -->
-          <div class="row mx-0 mt-2 gy-4">
+          <div class="row mx-0 rowContent">
             <div class="col-12 col-sm-6 col-md-4">
               <div class="softSkill d-flex justify-content-center">
                 <div class="imgContainer me-3">
@@ -909,19 +944,145 @@
 
       <!-- Projects -->
       <section id="projects">
+        <div class="line" id="aboutLineTop"></div>
         <div class="container">
-          <div class="row mx-0">
+          <div class="col-12 mx-0 text-center subTitle" id="aboutTxt">
+            PROJECTS
+          </div>
+          <div class="row mx-0 rowContent">
+            <!-- KKIS -->
             <div class="col-12 col-sm-6 col-md-3">
               <div class="flip-container">
                 <div class="flipper">
-                  <div class="front">
+                  <div
+                    class="front d-flex justify-content-center align-items-center"
+                    style="background-color: #F5C559"
+                  >
                     <img
                       src="https://github.com/nicolealcala/SAM-Finals/blob/main/assets/front-kkis.png?raw=true"
                       alt=""
                     />
                   </div>
-                  <div class="back">
-                    <!-- Back content goes here -->
+                  <div
+                    class="back d-flex flex-column justify-content-stretch align-items-start p-4"
+                    style="background-color: #F5C559;"
+                  >
+                    <div class="me-auto">
+                      <img
+                        src="https://github.com/nicolealcala/SAM-Finals/blob/main/assets/back-kkis.png?raw=true"
+                        alt=""
+                      />
+                    </div>
+                    <span class="text-center mt-5" style="font-size: 15px; color: white"
+                      >Katipunan ng Kabataan Information System is a web-based
+                      information system leveraging QR code Technology. Its
+                      purpose is to assist the Sangguniang Kabataan in Brgy.
+                      Sampiruhan, Calamba City with managing resident data. It
+                      facilitates data-driven decision-making by analyzing and
+                      presenting data collected from the community.</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Loungescape -->
+            <div class="col-12 col-sm-6 col-md-3">
+              <div class="flip-container">
+                <div class="flipper">
+                  <div
+                    class="front d-flex justify-content-center align-items-center"
+                    style="background-color: #476696"
+                  >
+                    <img
+                      src="https://github.com/nicolealcala/SAM-Finals/blob/main/assets/front-loungescape.png?raw=true"
+                      alt=""
+                    />
+                  </div>
+                  <div
+                    class="back d-flex flex-column justify-content-stretch align-items-start p-4"
+                    style="background-color: #476696"
+                  >
+                    <div class="me-auto">
+                      <img
+                        src="https://github.com/nicolealcala/SAM-Finals/blob/main/assets/back-loungescape.png?raw=true"
+                        alt=""
+                      />
+                    </div>
+                    <span
+                      class="text-center mt-5"
+                      style="font-size: 15px; color: white"
+                      >Loungescape was a locally-hosted entertainment web
+                      application. It allows users to sign in and stream their
+                      favorite music. It included several pages such as the Home
+                      page, Discover page, Profile page, Liked page, etc.</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- OnTrack -->
+            <div class="col-12 col-sm-6 col-md-3 position-relative">
+              <div class="flip-container">
+                <div class="flipper">
+                  <div
+                    class="front d-flex justify-content-center align-items-center"
+                    style="background-color: #F4B492"
+                  >
+                    <img
+                      src="https://github.com/nicolealcala/SAM-Finals/blob/main/assets/front-ontrack.png?raw=true"
+                      alt=""
+                    />
+                  </div>
+                  <div
+                    class="back d-flex flex-column justify-content-stretch align-items-start p-4"
+                    style="background-color: #F4B492"
+                  >
+                    <div class="me-auto">
+                      <img
+                        src="https://github.com/nicolealcala/SAM-Finals/blob/main/assets/back-ontrack.png?raw=true"
+                        alt=""
+                      />
+                    </div>
+                    <span
+                      class="text-center mt-5"
+                      style="font-size: 15px; color: white"
+                      >On Track was a database management system designed for tracking indoor and outdoor properties. The system allows the user to enter information about their purchased property, including the price, allotted room, year of purchase, and owner information.</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ADTUKAT -->
+            <div class="col-12 col-sm-6 col-md-3 position-relative">
+              <div class="flip-container">
+                <div class="flipper">
+                  <div
+                    class="front d-flex justify-content-center align-items-center"
+                    style="background-color: #D5727B"
+                  >
+                    <img
+                      src="https://github.com/nicolealcala/SAM-Finals/blob/main/assets/front-adtukat.png?raw=true"
+                      alt=""
+                    />
+                  </div>
+                  <div
+                    class="back d-flex flex-column justify-content-stretch align-items-start p-4"
+                    style="background-color: #D5727B"
+                  >
+                    <div class="me-auto">
+                      <img
+                        src="https://github.com/nicolealcala/SAM-Finals/blob/main/assets/back-adtukat.png?raw=true"
+                        alt=""
+                      />
+                    </div>
+                    <span
+                      class="text-center mt-5"
+                      style="font-size: 15px; color: white"
+                      >ADTUKAT was a simple, hard-coded Java Project designed to showcase K-pop merchandise for sale. It was an app that display available KPOP albums, lightsticks, posters, and other KPOP collectibles for sale. It also calculates the total amount of selected items in the user's order form and generates an invoice for the order made.</span
+                    >
                   </div>
                 </div>
               </div>
