@@ -63,6 +63,12 @@
       #projects {
         background-color: #f0f0f0;
       }
+      #interests {
+        background-image: url("https://images.unsplash.com/photo-1579547621309-5e57ab324182?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+      }
       .content {
         height: 70%;
       }
@@ -180,6 +186,20 @@
       .project {
         height: 50px;
         width: auto;
+      }
+      
+      .gradient-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: linear-gradient(
+          to bottom,
+          rgba(96, 79, 111, 0.3) 0%,
+          rgba(96, 79, 111, 0.7) 100%
+        );
+        mix-blend-mode: multiply;
       }
 
       /* Buttons */
@@ -956,7 +976,7 @@
                 <div class="flipper">
                   <div
                     class="front d-flex justify-content-center align-items-center"
-                    style="background-color: #F5C559"
+                    style="background-color: #f5c559"
                   >
                     <img
                       src="https://github.com/nicolealcala/SAM-Finals/blob/main/assets/front-kkis.png?raw=true"
@@ -965,7 +985,7 @@
                   </div>
                   <div
                     class="back d-flex flex-column justify-content-stretch align-items-start p-4"
-                    style="background-color: #F5C559;"
+                    style="background-color: #f5c559"
                   >
                     <div class="me-auto">
                       <img
@@ -973,7 +993,9 @@
                         alt=""
                       />
                     </div>
-                    <span class="text-center mt-5" style="font-size: 15px; color: white"
+                    <span
+                      class="text-center mt-5"
+                      style="font-size: 15px; color: white"
                       >Katipunan ng Kabataan Information System is a web-based
                       information system leveraging QR code Technology. Its
                       purpose is to assist the Sangguniang Kabataan in Brgy.
@@ -1028,7 +1050,7 @@
                 <div class="flipper">
                   <div
                     class="front d-flex justify-content-center align-items-center"
-                    style="background-color: #F4B492"
+                    style="background-color: #f4b492"
                   >
                     <img
                       src="https://github.com/nicolealcala/SAM-Finals/blob/main/assets/front-ontrack.png?raw=true"
@@ -1037,7 +1059,7 @@
                   </div>
                   <div
                     class="back d-flex flex-column justify-content-stretch align-items-start p-4"
-                    style="background-color: #F4B492"
+                    style="background-color: #f4b492"
                   >
                     <div class="me-auto">
                       <img
@@ -1048,7 +1070,11 @@
                     <span
                       class="text-center mt-5"
                       style="font-size: 15px; color: white"
-                      >On Track was a database management system designed for tracking indoor and outdoor properties. The system allows the user to enter information about their purchased property, including the price, allotted room, year of purchase, and owner information.</span
+                      >On Track was a database management system designed for
+                      tracking indoor and outdoor properties. The system allows
+                      the user to enter information about their purchased
+                      property, including the price, allotted room, year of
+                      purchase, and owner information.</span
                     >
                   </div>
                 </div>
@@ -1061,7 +1087,7 @@
                 <div class="flipper">
                   <div
                     class="front d-flex justify-content-center align-items-center"
-                    style="background-color: #D5727B"
+                    style="background-color: #d5727b"
                   >
                     <img
                       src="https://github.com/nicolealcala/SAM-Finals/blob/main/assets/front-adtukat.png?raw=true"
@@ -1070,7 +1096,7 @@
                   </div>
                   <div
                     class="back d-flex flex-column justify-content-stretch align-items-start p-4"
-                    style="background-color: #D5727B"
+                    style="background-color: #d5727b"
                   >
                     <div class="me-auto">
                       <img
@@ -1081,13 +1107,26 @@
                     <span
                       class="text-center mt-5"
                       style="font-size: 15px; color: white"
-                      >ADTUKAT was a simple, hard-coded Java Project designed to showcase K-pop merchandise for sale. It was an app that display available KPOP albums, lightsticks, posters, and other KPOP collectibles for sale. It also calculates the total amount of selected items in the user's order form and generates an invoice for the order made.</span
+                      >ADTUKAT was a simple, hard-coded Java Project designed to
+                      showcase K-pop merchandise for sale. It was an app that
+                      display available KPOP albums, lightsticks, posters, and
+                      other KPOP collectibles for sale. It also calculates the
+                      total amount of selected items in the user's order form
+                      and generates an invoice for the order made.</span
                     >
                   </div>
                 </div>
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section id="interests" style="height: 700px">
+        <div class="gradient-overlay"></div>
+        <div class="line" id="resumeLineTop"></div>
+        <div class="container">
+          
         </div>
       </section>
 
