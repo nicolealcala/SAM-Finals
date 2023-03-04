@@ -433,12 +433,16 @@
         transform: rotateY(180deg);
       }
 
-      .card {
+      .card, .card-large {
         position: relative;
         width: 300px;
         height: 250px;
         overflow: hidden;
         border-radius: 20px;
+      }
+      .card-large {
+        width: 100%;
+        height: 380px;
       }
       .card_title {
         font-weight: bold;
@@ -451,8 +455,8 @@
         /* edit the width to fit card */
         width: 100%;
         height: 200px;
-        padding: 20px;
-        background: #7f7b9d;
+        padding: 15px 20px 20px 20px;
+        background: #003e70;
         border-top-left-radius: 20px;
         /* edit here to change the height of the content box */
         transform: translateY(150px);
@@ -467,10 +471,7 @@
         height: 100px;
         transform: rotate(-175deg);
         border-radius: 50%;
-        box-shadow: inset 48px 48px #7f7b9d;
-      }
-      .card_title {
-        line-height: 15px;
+        box-shadow: inset 48px 48px #003e70;
       }
       .card_description {
         margin-top: 10px;
@@ -479,10 +480,10 @@
         transition: opacity 0.5s;
         color: whitesmoke;
       }
-      .card:hover .card_content {
+      .card:hover .card_content, .card-large:hover .card_content{
         transform: translateY(0);
       }
-      .card:hover .card_description {
+      .card:hover .card_description, .card-large:hover .card_content {
         opacity: 1;
         transition-delay: 0.25s;
       }
@@ -1553,8 +1554,19 @@
           <div class="col-12 mx-0 text-center subTitle" id="techSkillsTxt">
             PORTFOLIO
           </div>
-          <div class="row mx-0 rowContent">
-            <div class="col-12 d-flex justify-content-center">Branding</div>
+          <div class="row mx-0 mt-2 gy-4">
+            <!-- Branding -->
+            <div
+              class="col-12 d-flex justify-content-center my-4"
+              style="
+                font-family: 'Golos Text' sans-serif;
+                font-size: 24px;
+                font-weight: 500;
+                color: #ef7887;
+              "
+            >
+              Branding
+            </div>
             <div class="col-12 col-md-3">
               <article class="card">
                 <div class="brandContainer p-3">
@@ -1565,12 +1577,12 @@
                   />
                 </div>
                 <div class="card_content">
-                  <span class="card_title">Medeco Logo</span>
+                  <span class="card_title">Loungescape Logo</span>
                   <p class="card_description">
-                    Lorem ipsum dolor, sit amet expedita exercitationem
-                    recusandae aut dolor tempora aperiam itaque possimus at,
-                    cupiditate earum, quae repudiandae aspernatur? Labore minus
-                    soluta consequatur placeat.
+                    I developed the concept of this logo for our project in Web
+                    Development - Loungscape. It prominently features a TV icon
+                    that resembles a sofa. This icon represents the idea of
+                    taking a break and relaxing.
                   </p>
                 </div>
               </article>
@@ -1606,10 +1618,9 @@
                 <div class="card_content">
                   <span class="card_title">Medeco Logo</span>
                   <p class="card_description">
-                    Lorem ipsum dolor, sit amet expedita exercitationem
-                    recusandae aut dolor tempora aperiam itaque possimus at,
-                    cupiditate earum, quae repudiandae aspernatur? Labore minus
-                    soluta consequatur placeat.
+                    As part of our technopreneurship course, I created this logo
+                    for an e-commerce application that I envisioned, which would
+                    focus on selling medicine products online.
                   </p>
                 </div>
               </article>
@@ -1624,12 +1635,83 @@
                 </div>
 
                 <div class="card_content">
-                  <span class="card_title">Medeco Logo</span>
+                  <span class="card_title">KKIS Logo</span>
                   <p class="card_description">
-                    Lorem ipsum dolor, sit amet expedita exercitationem
-                    recusandae aut dolor tempora aperiam itaque possimus at,
-                    cupiditate earum, quae repudiandae aspernatur? Labore minus
-                    soluta consequatur placeat.
+                    This is the logo of our Capstone Project, KKIS. The design
+                    is pretty straightforward, symbolizing the initials of the
+                    project. The colors were based on the SK logo.
+                  </p>
+                </div>
+              </article>
+            </div>
+            <!-- Web Designs -->
+            <div
+              class="col-12 d-flex justify-content-center mt-5"
+              style="
+                font-family: 'Golos Text' sans-serif;
+                font-size: 24px;
+                font-weight: 500;
+                color: #ef7887;
+              "
+            >
+              Web Designs
+            </div>
+
+            <div class="col-12 col-md-6">
+              <article class="card-large">
+                <div class="brandContainer">
+                  <img class="img-fluid"
+                    src="https://github.com/nicolealcala/SAM-Finals/blob/main/assets/portfolio/3-1.png?raw=true"
+                    alt=""
+                  />
+                </div>
+
+                <div class="card_content">
+                  <span class="card_title">KKIS Logo</span>
+                  <p class="card_description">
+                    This is the logo of our Capstone Project, KKIS. The design
+                    is pretty straightforward, symbolizing the initials of the
+                    project. The colors were based on the SK logo.
+                  </p>
+                </div>
+              </article>
+            </div>
+
+            <div class="col-12 col-md-6">
+              <article class="card-large">
+                <div class="brandContainer">
+                  <img class="img-fluid"
+                    src="https://github.com/nicolealcala/SAM-Finals/blob/main/assets/portfolio/3-2.png?raw=true"
+                    alt=""
+                  />
+                </div>
+
+                <div class="card_content">
+                  <span class="card_title">KKIS Logo</span>
+                  <p class="card_description">
+                    This is the logo of our Capstone Project, KKIS. The design
+                    is pretty straightforward, symbolizing the initials of the
+                    project. The colors were based on the SK logo.
+                  </p>
+                </div>
+              </article>
+            </div>
+
+            <div class="col-12 col-md-6">
+              <article class="card-large">
+                <div class="brandContainer">
+                  <img class="img-fluid"
+                    src="https://github.com/nicolealcala/SAM-Finals/blob/main/assets/portfolio/kkis-dm.png?raw=true"
+                    alt=""
+                  />
+                </div>
+
+                <div class="card_content">
+                  <span class="card_title">KKIS Logo</span>
+                  <p class="card_description">
+                    This is the logo of our Capstone Project, KKIS. The design
+                    is pretty straightforward, symbolizing the initials of the
+                    project. The colors were based on the SK logo.
                   </p>
                 </div>
               </article>
