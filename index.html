@@ -53,6 +53,7 @@
 
       /* SECTIONS */
       #home {
+        height: 100vh;
         background-image: url("https://github.com/nicolealcala/SAM-Finals/blob/main/assets/bg/home.png?raw=true");
         background-repeat: no-repeat;
         background-position: center;
@@ -71,6 +72,7 @@
         background-size: cover;
       }
       #projects {
+        height: 90vh;
         background-color: #f0f0f0;
       }
       #interests {
@@ -78,6 +80,12 @@
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
+      }
+      .dropdown-item {
+        border-radius: 5px;
+      }
+      .dropdown-item:hover {
+        background-color: #eed7d8;
       }
       .content {
         height: 70%;
@@ -105,10 +113,14 @@
       .dates,
       .miniTitle,
       .percent {
-        margin: auto;
         font-family: "Golos Text", sans-serif;
         color: white;
         font-size: 60px;
+      }
+
+      #title {
+        margin-top: 300px;
+        margin-bottom: 400px;
       }
       .subTitle {
         font-size: 40px;
@@ -482,7 +494,7 @@
       /* SKY */
       #message {
         height: 100vh;
-        display: flex;
+        /* display: flex; */
         justify-content: center;
         align-items: center;
         /* background: radial-gradient(ellipse at bottom, #0d1e31, #111); */
@@ -627,6 +639,27 @@
       .star:nth-child(5)::after {
         animation-delay: 1.6s;
       }
+
+      /* Input */
+      .glass {
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        border: none;
+        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(5px);
+        font-size: 18px;
+        padding: 12px;
+        color: white;
+        width: auto;
+      }
+      .glass:focus {
+        outline: none;
+        background-color: rgba(255, 255, 255, 0.3);
+        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+      }
+      .glass::placeholder {
+        color: #aeaeae;
+      }
     </style>
 
     <link
@@ -644,7 +677,7 @@
           <!-- Nav Start -->
           <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container-fluid">
-              <a class="navbar-brand" href="#">Navbar</a>
+              <!-- <a class="navbar-brand" href="#">Navbar</a> -->
               <button
                 class="navbar-toggler"
                 type="button"
@@ -681,7 +714,7 @@
                       Resume
                     </a>
                     <ul
-                      class="dropdown-menu"
+                      class="dropdown-menu glass"
                       aria-labelledby="navbarDropdownMenuLink"
                     >
                       <li>
@@ -730,7 +763,7 @@
             <div
               class="col-12 d-flex justify-content-center align-items-center"
             >
-              <span id="title">Nicole Alcala</span>
+              <span id="title"></span>
             </div>
           </div>
         </div>
@@ -751,13 +784,14 @@
             <div class="col-12 col-md-7 ps-4 d-flex align-items-center">
               <div class="txtContainer">
                 <p class="darkTxt">
-                  Hello! I am <b style="color: #ef7583">Nicole Alcala</b> - an
-                  aspiring Web Developer based in Laguna. I am currently taking
-                  my bachelor's degree in Information Technology at Polytechnic
-                  University of the Philippines - Sto. Tomas Branch. With great
-                  passion for learning, I am a consistent President’s Lister
-                  from 2019 to present. I enjoy programming, designing, and
-                  database management.
+                  Greetings! I am <b style="color: #ef7583">Nicole Alcala</b>,
+                  and I aspire to become a web developer. I am currently
+                  pursuing a bachelor's degree in Information Technology in
+                  Polytechnic University of the Philippines - Sto. Tomas, and I
+                  have consistently earned the President's Lister award since
+                  2019 due to my immense passion for learning.Some of my
+                  interests include programming, designing, and database
+                  management.
                 </p>
                 <p class="darkTxt">
                   I have only ever worked on small projects that were solely for
@@ -1486,7 +1520,7 @@
         </div>
       </section>
 
-      <section id="reference">
+      <!-- <section id="reference">
         <div class="line" id="techLineTop"></div>
         <div class="container">
           <div class="col-12 mx-0 text-center subTitle" id="techSkillsTxt">
@@ -1516,25 +1550,72 @@
             </div>
           </div>
         </div>
+      </section> -->
+      <section id="portfolio">
+        <div class="line" id="techLineTop"></div>
+        <div class="container">
+          <div class="col-12 mx-0 text-center subTitle" id="techSkillsTxt">
+            PORTFOLIO
+          </div>
+          <div class="row mx-0 rowContent">
+            <div class="col-12 col-md-6 d-flex justify-content-center felx-column">
+              <a href="">Branding</a>
+              <div class="col-6">
+                <img src="" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
 
       <section id="message">
-        <div class="line" id="resumeLineTop"></div>
         <div class="night">
           <div class="star"></div>
           <div class="star"></div>
           <div class="star"></div>
           <div class="star"></div>
           <div class="star"></div>
-          
-          <div class="container">
-            <div class="col-12 mx-0 text-center subTitle" id="techSkillsTxt">
-              REFERENCES
+        </div>
+        <div class="line" id="resumeLineTop"></div>
+        <div class="container">
+          <div class="col-12 mx-0 text-center subTitle" id="resumeTxt">
+            CONNECT
+          </div>
+          <div class="row mx-0 rowContent">
+            <div
+              class="col-12 col-md-6 d-flex flex-column justify-content-center"
+            >
+              <input type="text" class="glass my-2" placeholder="Name" />
+              <input
+                type="email"
+                class="glass my-2"
+                placeholder="Email address"
+              />
+              <input type="text" class="glass my-2" placeholder="Subject" />
+              <textarea
+                name="message"
+                class="glass my-2"
+                cols="30"
+                rows="10"
+                placeholder="Message"
+              ></textarea>
+
+              <button type="button" class="btn my-3">
+                <strong>SEND</strong>
+                <div id="container-stars">
+                  <div id="stars"></div>
+                </div>
+
+                <div id="glow">
+                  <div class="circle"></div>
+                  <div class="circle"></div>
+                </div>
+              </button>
             </div>
+            <div class="col-12 col-md-6 d-flex justify-content-end"></div>
           </div>
         </div>
       </section>
-
       <!-- Main Container End -->
     </div>
 
@@ -1775,6 +1856,17 @@
 
       $(".flipper").click(function () {
         $(this).toggleClass("flipped");
+      });
+
+      var typed = new Typed("#title", {
+        strings: [
+          "Welcome to my website.",
+          "I hope you enjoy your stay.",
+          " - Nicole Alcala - ^2000",
+        ],
+        typeSpeed: 50,
+        backSpeed: 3,
+        loop: true,
       });
     </script>
   </body>
