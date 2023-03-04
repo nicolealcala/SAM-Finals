@@ -22,6 +22,11 @@
     />
     <script src="	https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 
+    <!-- Fontawesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    />
     <!-- Styles -->
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=Heebo:wght@300;400;500;600&family=Poppins:wght@400;500;600;700&display=swap");
@@ -117,7 +122,6 @@
         color: white;
         font-size: 60px;
       }
-
       #title {
         margin-top: 300px;
         margin-bottom: 400px;
@@ -173,6 +177,15 @@
       h6 {
         color: #ef7887;
       }
+      .socials {
+        text-decoration: none;
+        font-size: 18px;
+        color: #ebebeb;
+        font-weight: 400;
+      }
+      .socials:hover {
+        color: #ef7887;
+      }
 
       /* LINES */
       .line {
@@ -220,6 +233,10 @@
         border-radius: 20px;
         display: flex;
         justify-content: center;
+      }
+      .interestContainer {
+        width: 90px;
+        height: 90px;
       }
       .gradient-overlay {
         position: absolute;
@@ -270,13 +287,18 @@
         backdrop-filter: blur(1rem);
         border-radius: 5rem;
       }
-      strong {
+      strong,
+      .inter {
         z-index: 2;
         font-family: "Poppins", sans-serif;
         font-size: 14px;
         letter-spacing: 5px;
         color: #ffffff;
         text-shadow: 0 0 4px white;
+      }
+      .inter {
+        font-size: 20px;
+        color: #fbc2ca;
       }
       #glow {
         position: absolute;
@@ -433,17 +455,12 @@
         transform: rotateY(180deg);
       }
 
-      .card,
-      .card-large {
+      .card {
         position: relative;
         width: 300px;
         height: 250px;
         overflow: hidden;
         border-radius: 20px;
-      }
-      .card-large {
-        width: 100%;
-        height: auto;
       }
       .card_title {
         font-weight: bold;
@@ -453,13 +470,11 @@
         position: absolute;
         left: 0;
         bottom: 0;
-        /* edit the width to fit card */
         width: 100%;
         height: 200px;
         padding: 15px 20px 20px 20px;
         background: #003e70;
         border-top-left-radius: 20px;
-        /* edit here to change the height of the content box */
         transform: translateY(150px);
         transition: transform 0.25s;
       }
@@ -494,10 +509,8 @@
       /* SKY */
       #message {
         height: 100vh;
-        /* display: flex; */
         justify-content: center;
         align-items: center;
-        /* background: radial-gradient(ellipse at bottom, #0d1e31, #111); */
         background: linear-gradient(
           360deg,
           rgba(85, 69, 96, 1) 0%,
@@ -660,6 +673,16 @@
       .glass::placeholder {
         color: #aeaeae;
       }
+
+      @media screen and (max-width: 991px) {
+        #title {
+          font-size: 30px;
+        }
+
+        .dp {
+          width: 80%;
+        }
+      }
     </style>
 
     <link
@@ -702,7 +725,7 @@
                   <li class="nav-item px-3">
                     <a class="nav-link" href="#about">About</a>
                   </li>
-                  <li class="nav-item dropdown">
+                  <li class="nav-item px-3 dropdown">
                     <a
                       class="nav-link dropdown-toggle"
                       href="#resume"
@@ -738,10 +761,10 @@
                     </ul>
                   </li>
                   <li class="nav-item px-3">
-                    <a class="nav-link" href="#">Portfolio</a>
+                    <a class="nav-link" href="#portfolio">Portfolio</a>
                   </li>
                   <li class="nav-item px-3">
-                    <button type="button" class="btn">
+                    <button type="button" class="btn" id="connectBtn">
                       <strong>CONNECT</strong>
                       <div id="container-stars">
                         <div id="stars"></div>
@@ -763,7 +786,7 @@
             <div
               class="col-12 d-flex justify-content-center align-items-center"
             >
-              <span id="title"></span>
+              <span id="title" class="text-center"></span>
             </div>
           </div>
         </div>
@@ -775,11 +798,15 @@
           <div class="col-12 mx-0 text-center subTitle" id="aboutTxt">
             ABOUT ME
           </div>
-          <div class="row mx-0 mb-2" style="margin-top: 100px">
+          <div class="row mx-0 mb-2 gy-3" style="margin-top: 100px">
             <div
               class="col-12 col-md-5 d-flex align-items-center justify-content-center"
             >
-              <img class="img-fluid" src="assets/dp.png" alt="" />
+              <img
+                class="img-fluid dp"
+                src="https://github.com/nicolealcala/SAM-Finals/blob/main/assets/dp.png?raw=true"
+                alt=""
+              />
             </div>
             <div class="col-12 col-md-7 ps-4 d-flex align-items-center">
               <div class="txtContainer">
@@ -814,7 +841,7 @@
           <div class="row mx-0 mt-3">
             <div class="col-12 col-md-5"></div>
             <div class="col-12 col-md-7 ps-4">
-              <button type="button" class="btn" style="width: 200px">
+              <button type="button" class="btn" id="dlcv" style="width: 200px">
                 <strong>Download CV</strong>
                 <div id="container-stars">
                   <div id="stars"></div>
@@ -1124,7 +1151,7 @@
             SOFT SKILLS
           </div>
           <!-- Communication -->
-          <div class="row mx-0 rowContent">
+          <div class="row mx-0 gy-3 rowContent">
             <div class="col-12 col-sm-6 col-md-4">
               <div class="softSkill d-flex justify-content-center">
                 <div class="imgContainer me-3">
@@ -1358,150 +1385,147 @@
           </div>
           <div class="row mx-0 rowContent">
             <!-- KKIS -->
-            <div class="col-12 col-sm-6 col-md-3">
-              <div class="flip-container">
-                <div class="flipper">
-                  <div
-                    class="front d-flex justify-content-center align-items-center"
-                    style="background-color: #f5c559"
-                  >
+            <div class="col-12 col-sm-6 col-lg-3 flip-container">
+              <!-- <div class="flip-container"> -->
+              <div class="flipper">
+                <div
+                  class="front d-flex justify-content-center align-items-center"
+                  style="background-color: #f5c559"
+                >
+                  <img
+                    src="https://github.com/nicolealcala/SAM-Finals/blob/main/assets/front-kkis.png?raw=true"
+                    alt=""
+                  />
+                </div>
+                <div
+                  class="back d-flex flex-column justify-content-stretch align-items-start p-4"
+                  style="background-color: #f5c559"
+                >
+                  <div class="me-auto">
                     <img
-                      src="https://github.com/nicolealcala/SAM-Finals/blob/main/assets/front-kkis.png?raw=true"
+                      src="https://github.com/nicolealcala/SAM-Finals/blob/main/assets/back-kkis.png?raw=true"
                       alt=""
                     />
                   </div>
-                  <div
-                    class="back d-flex flex-column justify-content-stretch align-items-start p-4"
-                    style="background-color: #f5c559"
+                  <span
+                    class="text-start mt-5"
+                    style="font-size: 15px; color: white"
+                    >Katipunan ng Kabataan Information System is a web-based
+                    information system leveraging QR code Technology. Its
+                    purpose is to assist the Sangguniang Kabataan in Brgy.
+                    Sampiruhan, Calamba City with managing resident data. It
+                    facilitates data-driven decision-making by analyzing and
+                    presenting data collected from the community.</span
                   >
-                    <div class="me-auto">
-                      <img
-                        src="https://github.com/nicolealcala/SAM-Finals/blob/main/assets/back-kkis.png?raw=true"
-                        alt=""
-                      />
-                    </div>
-                    <span
-                      class="text-start mt-5"
-                      style="font-size: 15px; color: white"
-                      >Katipunan ng Kabataan Information System is a web-based
-                      information system leveraging QR code Technology. Its
-                      purpose is to assist the Sangguniang Kabataan in Brgy.
-                      Sampiruhan, Calamba City with managing resident data. It
-                      facilitates data-driven decision-making by analyzing and
-                      presenting data collected from the community.</span
-                    >
-                  </div>
                 </div>
               </div>
             </div>
 
             <!-- Loungescape -->
-            <div class="col-12 col-sm-6 col-md-3">
-              <div class="flip-container">
-                <div class="flipper">
-                  <div
-                    class="front d-flex justify-content-center align-items-center"
-                    style="background-color: #476696"
-                  >
+            <div class="col-12 col-sm-6 col-lg-3 flip-container">
+              <div class="flipper">
+                <div
+                  class="front d-flex justify-content-center align-items-center"
+                  style="background-color: #476696"
+                >
+                  <img
+                    src="https://github.com/nicolealcala/SAM-Finals/blob/main/assets/front-loungescape.png?raw=true"
+                    alt=""
+                  />
+                </div>
+                <div
+                  class="back d-flex flex-column justify-content-stretch align-items-start p-4"
+                  style="background-color: #476696"
+                >
+                  <div class="me-auto">
                     <img
-                      src="https://github.com/nicolealcala/SAM-Finals/blob/main/assets/front-loungescape.png?raw=true"
+                      src="https://github.com/nicolealcala/SAM-Finals/blob/main/assets/back-loungescape.png?raw=true"
                       alt=""
                     />
                   </div>
-                  <div
-                    class="back d-flex flex-column justify-content-stretch align-items-start p-4"
-                    style="background-color: #476696"
+                  <span
+                    class="text-start mt-5"
+                    style="font-size: 15px; color: white"
+                    >Loungescape was a locally-hosted entertainment web
+                    application. It allows users to sign in and stream their
+                    favorite music. It included several pages such as the Home
+                    page, Discover page, Profile page, Liked page, etc.</span
                   >
-                    <div class="me-auto">
-                      <img
-                        src="https://github.com/nicolealcala/SAM-Finals/blob/main/assets/back-loungescape.png?raw=true"
-                        alt=""
-                      />
-                    </div>
-                    <span
-                      class="text-start mt-5"
-                      style="font-size: 15px; color: white"
-                      >Loungescape was a locally-hosted entertainment web
-                      application. It allows users to sign in and stream their
-                      favorite music. It included several pages such as the Home
-                      page, Discover page, Profile page, Liked page, etc.</span
-                    >
-                  </div>
                 </div>
               </div>
             </div>
 
             <!-- OnTrack -->
-            <div class="col-12 col-sm-6 col-md-3 position-relative">
-              <div class="flip-container">
-                <div class="flipper">
-                  <div
-                    class="front d-flex justify-content-center align-items-center"
-                    style="background-color: #f4b492"
-                  >
+            <div
+              class="col-12 col-sm-6 col-lg-3 position-relative flip-container"
+            >
+              <div class="flipper">
+                <div
+                  class="front d-flex justify-content-center align-items-center"
+                  style="background-color: #f4b492"
+                >
+                  <img
+                    src="https://github.com/nicolealcala/SAM-Finals/blob/main/assets/front-ontrack.png?raw=true"
+                    alt=""
+                  />
+                </div>
+                <div
+                  class="back d-flex flex-column justify-content-stretch align-items-start p-4"
+                  style="background-color: #f4b492"
+                >
+                  <div class="me-auto">
                     <img
-                      src="https://github.com/nicolealcala/SAM-Finals/blob/main/assets/front-ontrack.png?raw=true"
+                      src="https://github.com/nicolealcala/SAM-Finals/blob/main/assets/back-ontrack.png?raw=true"
                       alt=""
                     />
                   </div>
-                  <div
-                    class="back d-flex flex-column justify-content-stretch align-items-start p-4"
-                    style="background-color: #f4b492"
+                  <span
+                    class="text-start mt-5"
+                    style="font-size: 15px; color: white"
+                    >On Track was a database management system designed for
+                    tracking indoor and outdoor properties. The system allows
+                    the user to enter information about their purchased
+                    property, including the price, allotted room, year of
+                    purchase, and owner information.</span
                   >
-                    <div class="me-auto">
-                      <img
-                        src="https://github.com/nicolealcala/SAM-Finals/blob/main/assets/back-ontrack.png?raw=true"
-                        alt=""
-                      />
-                    </div>
-                    <span
-                      class="text-start mt-5"
-                      style="font-size: 15px; color: white"
-                      >On Track was a database management system designed for
-                      tracking indoor and outdoor properties. The system allows
-                      the user to enter information about their purchased
-                      property, including the price, allotted room, year of
-                      purchase, and owner information.</span
-                    >
-                  </div>
                 </div>
               </div>
             </div>
 
             <!-- ADTUKAT -->
-            <div class="col-12 col-sm-6 col-md-3 position-relative">
-              <div class="flip-container">
-                <div class="flipper">
-                  <div
-                    class="front d-flex justify-content-center align-items-center"
-                    style="background-color: #d5727b"
-                  >
+            <div
+              class="col-12 col-sm-6 col-lg-3 position-relative flip-container"
+            >
+              <div class="flipper">
+                <div
+                  class="front d-flex justify-content-center align-items-center"
+                  style="background-color: #d5727b"
+                >
+                  <img
+                    src="https://github.com/nicolealcala/SAM-Finals/blob/main/assets/front-adtukat.png?raw=true"
+                    alt=""
+                  />
+                </div>
+                <div
+                  class="back d-flex flex-column justify-content-stretch align-items-start p-4"
+                  style="background-color: #d5727b"
+                >
+                  <div class="me-auto">
                     <img
-                      src="https://github.com/nicolealcala/SAM-Finals/blob/main/assets/front-adtukat.png?raw=true"
+                      src="https://github.com/nicolealcala/SAM-Finals/blob/main/assets/back-adtukat.png?raw=true"
                       alt=""
                     />
                   </div>
-                  <div
-                    class="back d-flex flex-column justify-content-stretch align-items-start p-4"
-                    style="background-color: #d5727b"
+                  <span
+                    class="text-start mt-5"
+                    style="font-size: 15px; color: white"
+                    >ADTUKAT was a simple, hard-coded Java Project designed to
+                    showcase K-pop merchandise for sale. It was an app that
+                    display available KPOP albums, lightsticks, posters, and
+                    other KPOP collectibles for sale. It also calculates the
+                    total amount of selected items in the user's order form and
+                    generates an invoice for the order made.</span
                   >
-                    <div class="me-auto">
-                      <img
-                        src="https://github.com/nicolealcala/SAM-Finals/blob/main/assets/back-adtukat.png?raw=true"
-                        alt=""
-                      />
-                    </div>
-                    <span
-                      class="text-start mt-5"
-                      style="font-size: 15px; color: white"
-                      >ADTUKAT was a simple, hard-coded Java Project designed to
-                      showcase K-pop merchandise for sale. It was an app that
-                      display available KPOP albums, lightsticks, posters, and
-                      other KPOP collectibles for sale. It also calculates the
-                      total amount of selected items in the user's order form
-                      and generates an invoice for the order made.</span
-                    >
-                  </div>
                 </div>
               </div>
             </div>
@@ -1509,14 +1533,74 @@
         </div>
       </section>
 
-      <section id="interests" style="height: 700px">
+      <section id="interests" style="height: auto">
         <div class="gradient-overlay"></div>
         <div class="line" id="resumeLineTop"></div>
-        <div class="container">
+        <div class="container pt-4">
           <div class="col-12 mx-0 text-center subTitle" id="softSkillsTxt">
             INTERESTS
           </div>
-          <div class="row mx-0 rowContent"></div>
+          <div class="row mx-0 rowContent">
+            <div
+              class="col-12 col-sm-6 col-lg-3 d-flex flex-column justify-content-center align-items-center"
+            >
+              <div
+                class="interestContainer d-flex justify-content-center align-items-center"
+              >
+                <img
+                  class="img-fluid"
+                  src="https://img.icons8.com/nolan/256/apple-music.png"
+                  alt=""
+                />
+              </div>
+              <span class="text-center mt-4 inter">Music</span>
+            </div>
+
+            <div
+              class="col-12 col-sm-6 col-lg-3 d-flex flex-column justify-content-center align-items-center"
+            >
+              <div
+                class="interestContainer d-flex justify-content-center align-items-center"
+              >
+                <img
+                  class="img-fluid"
+                  src="https://img.icons8.com/nolan/256/1A6DFF/C822FF/backend-development.png"
+                  alt=""
+                />
+              </div>
+              <span class="text-center mt-4 inter">Programming</span>
+            </div>
+
+            <div
+              class="col-12 col-sm-6 col-lg-3 d-flex flex-column justify-content-center align-items-center"
+            >
+              <div
+                class="interestContainer d-flex justify-content-center align-items-center"
+              >
+                <img
+                  class="img-fluid"
+                  src="https://img.icons8.com/nolan/256/1A6DFF/C822FF/cat-footprint.png"
+                  alt=""
+                />
+              </div>
+              <span class="text-center mt-4 inter">Animals</span>
+            </div>
+
+            <div
+              class="col-12 col-sm-6 col-lg-3 d-flex flex-column justify-content-center align-items-center"
+            >
+              <div
+                class="interestContainer d-flex justify-content-center align-items-center"
+              >
+                <img
+                  class="img-fluid"
+                  src="https://img.icons8.com/nolan/256/1A6DFF/C822FF/controller.png"
+                  alt=""
+                />
+              </div>
+              <span class="text-center mt-4 inter">Gaming</span>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -1570,7 +1654,7 @@
             >
               Branding
             </div>
-            <div class="col-12 col-md-3">
+            <div class="col-12 col-md-6 col-lg-3 d-flex justify-content-center">
               <article class="card">
                 <div class="brandContainer p-3">
                   <img
@@ -1590,7 +1674,7 @@
                 </div>
               </article>
             </div>
-            <div class="col-12 col-md-3">
+            <div class="col-12 col-md-6 col-lg-3 d-flex justify-content-center">
               <article class="card">
                 <div class="brandContainer p-3">
                   <img
@@ -1609,7 +1693,7 @@
                 </div>
               </article>
             </div>
-            <div class="col-12 col-md-3">
+            <div class="col-12 col-md-6 col-lg-3 d-flex justify-content-center">
               <article class="card">
                 <div class="brandContainer p-3">
                   <img
@@ -1628,7 +1712,7 @@
                 </div>
               </article>
             </div>
-            <div class="col-12 col-md-3">
+            <div class="col-12 col-md-6 col-lg-3 d-flex justify-content-center">
               <article class="card">
                 <div class="brandContainer p-3">
                   <img
@@ -1661,7 +1745,7 @@
             </div>
 
             <div class="col-12 col-md-6">
-              <article class="card-large">
+              <article class="card" style="width: 100%; height: auto">
                 <div class="brandContainer">
                   <img
                     class="img-fluid"
@@ -1671,18 +1755,24 @@
                 </div>
 
                 <div class="card_content">
-                  <span class="card_title">KKIS Logo</span>
-                  <p class="card_description">
-                    This is the logo of our Capstone Project, KKIS. The design
-                    is pretty straightforward, symbolizing the initials of the
-                    project. The colors were based on the SK logo.
+                  <span class="card_title">KKIS Index</span>
+                  <p class="card_description" style="font-size: 16px">
+                    The index page of KKIS found in
+                    <a
+                      href="aragon-notice.000webhostapp.com"
+                      style="color: white"
+                      >aragon-notice.000webhostapp.com.</a
+                    >
+                    used a combination of color yellow and blue. The animated
+                    background was selected to enhance the overall design of the
+                    website and to create a harmonious visual experience.
                   </p>
                 </div>
               </article>
             </div>
 
             <div class="col-12 col-md-6">
-              <article class="card-large">
+              <article class="card" style="width: 100%; height: auto">
                 <div class="brandContainer">
                   <img
                     class="img-fluid"
@@ -1692,18 +1782,17 @@
                 </div>
 
                 <div class="card_content">
-                  <span class="card_title">KKIS Logo</span>
-                  <p class="card_description">
-                    This is the logo of our Capstone Project, KKIS. The design
-                    is pretty straightforward, symbolizing the initials of the
-                    project. The colors were based on the SK logo.
+                  <span class="card_title">KKIS Dashboard</span>
+                  <p class="card_description" style="font-size: 16px">
+                    The Dashboard page was designed to present a comprehensive
+                    and informative summary of the data.
                   </p>
                 </div>
               </article>
             </div>
 
             <div class="col-12 col-md-6">
-              <article class="card-large">
+              <article class="card" style="width: 100%; height: auto">
                 <div class="brandContainer">
                   <img
                     class="img-fluid"
@@ -1713,18 +1802,17 @@
                 </div>
 
                 <div class="card_content">
-                  <span class="card_title">KKIS Logo</span>
-                  <p class="card_description">
-                    This is the logo of our Capstone Project, KKIS. The design
-                    is pretty straightforward, symbolizing the initials of the
-                    project. The colors were based on the SK logo.
+                  <span class="card_title">KKIS Dashboard - Dark Mode</span>
+                  <p class="card_description" style="font-size: 16px">
+                    This is the proposed dark mode version of the page, but it
+                    was not implemented in the deployment phase.
                   </p>
                 </div>
               </article>
             </div>
 
             <div class="col-12 col-md-6">
-              <article class="card-large">
+              <article class="card" style="width: 100%; height: auto">
                 <div class="brandContainer">
                   <img
                     class="img-fluid"
@@ -1734,18 +1822,17 @@
                 </div>
 
                 <div class="card_content">
-                  <span class="card_title">KKIS Logo</span>
-                  <p class="card_description">
-                    This is the logo of our Capstone Project, KKIS. The design
-                    is pretty straightforward, symbolizing the initials of the
-                    project. The colors were based on the SK logo.
+                  <span class="card_title">KKIS Households - Dark Mode</span>
+                  <p class="card_description" style="font-size: 16px">
+                    This is the proposed dark mode version of the page, but it
+                    was not implemented in the deployment phase.
                   </p>
                 </div>
               </article>
             </div>
 
             <div class="col-12 col-md-6">
-              <article class="card-large">
+              <article class="card" style="width: 100%; height: auto">
                 <div class="brandContainer">
                   <img
                     class="img-fluid"
@@ -1755,18 +1842,18 @@
                 </div>
 
                 <div class="card_content">
-                  <span class="card_title">KKIS Logo</span>
-                  <p class="card_description">
-                    This is the logo of our Capstone Project, KKIS. The design
-                    is pretty straightforward, symbolizing the initials of the
-                    project. The colors were based on the SK logo.
+                  <span class="card_title">Promotional Page</span>
+                  <p class="card_description" style="font-size: 16px">
+                    This page serves as a promotion for the Samsung Galaxy Z
+                    Flip 4, highlighting its unique features, properties, and
+                    attributes.
                   </p>
                 </div>
               </article>
             </div>
 
             <div class="col-12 col-md-6">
-              <article class="card-large">
+              <article class="card" style="width: 100%; height: auto">
                 <div class="brandContainer">
                   <img
                     class="img-fluid"
@@ -1776,11 +1863,11 @@
                 </div>
 
                 <div class="card_content">
-                  <span class="card_title">KKIS Logo</span>
-                  <p class="card_description">
-                    This is the logo of our Capstone Project, KKIS. The design
-                    is pretty straightforward, symbolizing the initials of the
-                    project. The colors were based on the SK logo.
+                  <span class="card_title">Promotional Page</span>
+                  <p class="card_description" style="font-size: 16px">
+                    This page serves as a promotion for the Samsung Galaxy Z
+                    Flip 4, highlighting its unique features, properties, and
+                    attributes.
                   </p>
                 </div>
               </article>
@@ -1833,7 +1920,66 @@
                 </div>
               </button>
             </div>
-            <div class="col-12 col-md-6 d-flex justify-content-end"></div>
+
+            <div class="col-12 col-md-6">
+              <div class="row mx-0">
+                <div
+                  class="col-12 d-flex justify-content-end align-items-center miniTitle"
+                  style="font-size: 20px"
+                >
+                  Social Links
+                </div>
+                <div
+                  class="col-11 d-flex justify-content-end align-items-center mt-4"
+                >
+                  <a
+                    href="https://web.facebook.com/nicole.alcala.m"
+                    class="socials"
+                    >facebook.com/nicole.alcala.m</a
+                  >
+                </div>
+                <div
+                  class="col-1 d-flex justify-content-center align-items-center mt-4"
+                >
+                  <i
+                    class="fa-brands fa-facebook"
+                    style="font-size: 35px; color: white"
+                  ></i>
+                </div>
+
+                <div
+                  class="col-11 d-flex justify-content-end align-items-center mt-4"
+                >
+                  <a href="https://twitter.com/clinoae" class="socials"
+                    >twitter.com/clinoae</a
+                  >
+                </div>
+
+                <div
+                  class="col-1 d-flex justify-content-center align-items-center mt-4"
+                >
+                  <i
+                    class="fa-brands fa-square-twitter"
+                    style="font-size: 35px; color: white"
+                  ></i>
+                </div>
+
+                <div
+                  class="col-11 d-flex justify-content-end align-items-center mt-4"
+                >
+                  <a href="#" class="socials">nclmalcala@gmail.com</a>
+                </div>
+
+                <div
+                  class="col-1 d-flex justify-content-center align-items-center mt-4"
+                >
+                  <i
+                    class="fa-solid fa-envelope"
+                    style="font-size: 35px; color: white"
+                  ></i>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -2088,6 +2234,14 @@
         typeSpeed: 50,
         backSpeed: 3,
         loop: true,
+      });
+
+      $("#connectBtn").click(function () {
+        location.href = "#message";
+      });
+
+      $("#dlcv").click(function () {
+        window.open('https://drive.google.com/file/d/1YcCAWrraPHQRUi-c_BuqTrvSLCWDrGE_/view', '_blank');
       });
     </script>
   </body>
