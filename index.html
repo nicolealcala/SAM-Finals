@@ -12,6 +12,9 @@
     <!-- ChartJS -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.2.1/dist/chart.umd.min.js"></script>
 
+    <!-- TypedJS -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
     <!-- Bootstrap CDN -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
@@ -43,8 +46,9 @@
         z-index: 10;
       }
       section {
-        height: 1080px;
+        /* height: 1080px; */
         position: relative;
+        padding-bottom: 130px;
       }
 
       /* SECTIONS */
@@ -389,13 +393,10 @@
       }
 
       /* Cards */
-      .flip-container {
-        perspective: 1000px;
-      }
       .flipper {
-        transition: 0.6s;
+        perspective: 1000px;
         transform-style: preserve-3d;
-        position: relative;
+        transition: transform 0.5s;
       }
       .front,
       .back {
@@ -414,22 +415,23 @@
       }
       .back {
         transform: rotateY(180deg);
+        z-index: 1;
       }
-      .flip-container:hover .flipper {
+      .flipped {
         transform: rotateY(180deg);
       }
 
       .card {
         position: relative;
         width: 300px;
-        height: 360px;
-        color: #2e2d31;
-        background: #131313;
+        height: 400px;
+        /* background: #131313; */
         overflow: hidden;
         border-radius: 20px;
       }
       .card_title {
         font-weight: bold;
+        color: #df5171;
       }
       .card_content {
         position: absolute;
@@ -437,8 +439,9 @@
         bottom: 0;
         /* edit the width to fit card */
         width: 100%;
+        height: 280px;
         padding: 20px;
-        background: #f2f2f2;
+        background: #ffffff;
         border-top-left-radius: 20px;
         /* edit here to change the height of the content box */
         transform: translateY(150px);
@@ -453,10 +456,9 @@
         height: 100px;
         transform: rotate(-175deg);
         border-radius: 50%;
-        box-shadow: inset 48px 48px #f2f2f2;
+        box-shadow: inset 48px 48px #ffffff;
       }
       .card_title {
-        color: #131313;
         line-height: 15px;
       }
       .card_subtitle {
@@ -477,7 +479,154 @@
         transition-delay: 0.25s;
       }
 
-      /* Charts */
+      /* SKY */
+      #message {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* background: radial-gradient(ellipse at bottom, #0d1e31, #111); */
+        background: linear-gradient(
+          360deg,
+          rgba(85, 69, 96, 1) 0%,
+          rgba(60, 64, 90, 1) 53%,
+          rgba(46, 37, 72, 1) 100%
+        );
+        overflow: hidden;
+      }
+
+      .night {
+        position: absolute;
+        /* position: relative; */
+        width: 100%;
+        height: 100%;
+        transform: rotateZ(150deg);
+      }
+
+      .star {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        height: 4px;
+        background: linear-gradient(-45deg, #7b7faf, rgba(0, 0, 255, 0));
+        border-radius: 999px;
+        filter: drop-shadow(0 0 6px #699bff);
+        animation: tail 3s ease-in-out infinite, falling 3s ease-in-out infinite;
+      }
+
+      @keyframes tail {
+        0% {
+          width: 0;
+        }
+
+        30% {
+          width: 200px;
+        }
+
+        100% {
+          width: 0;
+        }
+      }
+
+      @keyframes falling {
+        0% {
+          transform: translateX(0);
+        }
+
+        100% {
+          transform: translateX(1000px);
+        }
+      }
+
+      .star::before,
+      .star::after {
+        content: "";
+        position: absolute;
+        top: calc(50% - 2px);
+        right: 0;
+        height: 2px;
+        background: linear-gradient(
+          -45deg,
+          rgba(0, 0, 255, 0),
+          #f5cdc1,
+          rgba(0, 0, 255, 0)
+        );
+        border-radius: 100%;
+        transform: translateX(50%) rotateZ(150deg);
+        animation: shining 3s ease-in-out infinite;
+      }
+
+      @keyframes shining {
+        0% {
+          width: 0;
+        }
+
+        50% {
+          width: 30px;
+        }
+
+        100% {
+          width: 0;
+        }
+      }
+
+      .star::after {
+        transform: translateX(50%) rotateZ(45deg);
+      }
+      .star:nth-child(1) {
+        top: calc(50% - 100px);
+        left: calc(50% - 450px);
+        animation-delay: 1s;
+      }
+
+      .star:nth-child(1)::before,
+      .star:nth-child(1)::after {
+        animation-delay: 1s;
+      }
+
+      .star:nth-child(2) {
+        top: calc(50% - 50px);
+        left: calc(50% - 300px);
+        animation-delay: 1.2s;
+      }
+
+      .star:nth-child(2)::before,
+      .star:nth-child(2)::after {
+        animation-delay: 1.2s;
+      }
+
+      .star:nth-child(3) {
+        top: calc(50% - 0px);
+        left: calc(50% - 150px);
+        animation-delay: 1.4s;
+      }
+
+      .star:nth-child(3)::before,
+      .star:nth-child(3)::after {
+        animation-delay: 1.4s;
+      }
+
+      .star:nth-child(4) {
+        top: calc(50% - -50px);
+        left: calc(50% - 200px);
+        animation-delay: 1.5s;
+      }
+
+      .star:nth-child(4)::before,
+      .star:nth-child(4)::after {
+        animation-delay: 1.5s;
+      }
+
+      .star:nth-child(5) {
+        top: calc(50% - -100px);
+        left: calc(50% - 250px);
+        animation-delay: 1.6s;
+      }
+
+      .star:nth-child(5)::before,
+      .star:nth-child(5)::after {
+        animation-delay: 1.6s;
+      }
     </style>
 
     <link
@@ -1333,18 +1482,25 @@
           <div class="col-12 mx-0 text-center subTitle" id="softSkillsTxt">
             INTERESTS
           </div>
-          <div class="row mx-0 rowContent">
-
-          </div>
+          <div class="row mx-0 rowContent"></div>
         </div>
       </section>
 
       <section id="reference">
+        <div class="line" id="techLineTop"></div>
         <div class="container">
+          <div class="col-12 mx-0 text-center subTitle" id="techSkillsTxt">
+            REFERENCES
+          </div>
           <div class="row mx-0">
             <div class="col-4">
               <article class="card">
-                <img src="https://scontent.fmnl4-4.fna.fbcdn.net/v/t1.6435-9/61253104_3186455171380623_5334651347897679872_n.jpg?stp=dst-jpg_s552x414&_nc_cat=102&ccb=1-7&_nc_sid=174925&_nc_eui2=AeFlvpXdqeGH3X0GSEHiH_3HvIrZkFVhucC8itmQVWG5wAhuuBr0JeeyUpVfx3EWVnmRpemuBh6RQptP7XUe6y7L&_nc_ohc=EY5kGtV4omYAX9g8NCs&_nc_ht=scontent.fmnl4-4.fna&oh=00_AfD8D8OsAVktf5pF97y_a2Y88-chdyNixfxdjLjyR522lg&oe=642A75D1" alt="">
+                <img
+                  style="object-fit: cover"
+                  class="img-fluid"
+                  src="https://scontent.fmnl4-4.fna.fbcdn.net/v/t1.6435-9/61253104_3186455171380623_5334651347897679872_n.jpg?stp=dst-jpg_s552x414&_nc_cat=102&ccb=1-7&_nc_sid=174925&_nc_eui2=AeFlvpXdqeGH3X0GSEHiH_3HvIrZkFVhucC8itmQVWG5wAhuuBr0JeeyUpVfx3EWVnmRpemuBh6RQptP7XUe6y7L&_nc_ohc=EY5kGtV4omYAX9g8NCs&_nc_ht=scontent.fmnl4-4.fna&oh=00_AfD8D8OsAVktf5pF97y_a2Y88-chdyNixfxdjLjyR522lg&oe=642A75D1"
+                  alt=""
+                />
                 <div class="card_content">
                   <span class="card_title">Christopher Jay De Claro</span>
                   <span class="card_subtitle">SOFTWARE ENGINEER</span>
@@ -1362,7 +1518,22 @@
         </div>
       </section>
 
-      <section id="message"></section>
+      <section id="message">
+        <div class="line" id="resumeLineTop"></div>
+        <div class="night">
+          <div class="star"></div>
+          <div class="star"></div>
+          <div class="star"></div>
+          <div class="star"></div>
+          <div class="star"></div>
+          
+          <div class="container">
+            <div class="col-12 mx-0 text-center subTitle" id="techSkillsTxt">
+              REFERENCES
+            </div>
+          </div>
+        </div>
+      </section>
 
       <!-- Main Container End -->
     </div>
@@ -1397,11 +1568,11 @@
               enabled: false,
             },
           },
-          // elements: {
-          //   arc: {
-          //     borderRadius: 20,
-          //   },
-          // },
+          elements: {
+            arc: {
+              borderRadius: 20,
+            },
+          },
           hover: { mode: null },
         },
       });
@@ -1425,11 +1596,11 @@
               enabled: false,
             },
           },
-          // elements: {
-          //   arc: {
-          //     borderRadius: 20,
-          //   },
-          // },
+          elements: {
+            arc: {
+              borderRadius: 20,
+            },
+          },
           hover: { mode: null },
         },
       });
@@ -1453,11 +1624,11 @@
               enabled: false,
             },
           },
-          // elements: {
-          //   arc: {
-          //     borderRadius: 20,
-          //   },
-          // },
+          elements: {
+            arc: {
+              borderRadius: 20,
+            },
+          },
           hover: { mode: null },
         },
       });
@@ -1481,11 +1652,11 @@
               enabled: false,
             },
           },
-          // elements: {
-          //   arc: {
-          //     borderRadius: 20,
-          //   },
-          // },
+          elements: {
+            arc: {
+              borderRadius: 20,
+            },
+          },
           hover: { mode: null },
         },
       });
@@ -1509,11 +1680,11 @@
               enabled: false,
             },
           },
-          // elements: {
-          //   arc: {
-          //     borderRadius: 20,
-          //   },
-          // },
+          elements: {
+            arc: {
+              borderRadius: 20,
+            },
+          },
           hover: { mode: null },
         },
       });
@@ -1537,11 +1708,11 @@
               enabled: false,
             },
           },
-          // elements: {
-          //   arc: {
-          //     borderRadius: 20,
-          //   },
-          // },
+          elements: {
+            arc: {
+              borderRadius: 20,
+            },
+          },
           hover: { mode: null },
         },
       });
@@ -1565,11 +1736,11 @@
               enabled: false,
             },
           },
-          // elements: {
-          //   arc: {
-          //     borderRadius: 20,
-          //   },
-          // },
+          elements: {
+            arc: {
+              borderRadius: 20,
+            },
+          },
           hover: { mode: null },
         },
       });
@@ -1593,13 +1764,17 @@
               enabled: false,
             },
           },
-          // elements: {
-          //   arc: {
-          //     borderRadius: 20,
-          //   },
-          // },
+          elements: {
+            arc: {
+              borderRadius: 20,
+            },
+          },
           hover: { mode: null },
         },
+      });
+
+      $(".flipper").click(function () {
+        $(this).toggleClass("flipped");
       });
     </script>
   </body>
